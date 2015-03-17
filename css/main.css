@@ -54,14 +54,24 @@ textarea {
 
 footer {
     overflow: hidden;
+    position: absolute;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding: 100px 50px;
     background-color: #222;
-    border-bottom: 1px #4C4C4C solid;
 }
 
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -150px; /* the bottom margin is the negative value of the footer's         height */
+
+}
+.footer, .push {
+    height: 150px; /* '.push' must be the same height as 'footer' */
+}
 
 /* ==========================================================================
    Author's custom styles
@@ -123,8 +133,13 @@ footer {
 	
 }
 
-#logo-resize {
+.logo-container{
     width: 60%;
+    height: auto;
+}
+
+#logo-resize {
+    width: 100%;
     height: auto;
 }
 
@@ -132,8 +147,17 @@ footer {
 @media only screen and (max-width: 768px) {
     #logo-resize {
         position: absolute;
-        width: 20%;
+        width: 15%;
         height: auto;
+    }
+    
+    .logo-container{
+        width: 125px;
+        height: auto;
+    }
+    
+    #navbar-resize {
+        padding-top: 10px;
     }
 }
 
