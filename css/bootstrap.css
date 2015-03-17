@@ -6208,6 +6208,7 @@ button.close {
   margin-left: -30%;
   text-align: center;
   list-style: none;
+    color: aqua;
 }
 .carousel-indicators li {
   display: inline-block;
