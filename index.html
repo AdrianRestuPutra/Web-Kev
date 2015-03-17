@@ -8,13 +8,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="img/kesv%20kecil.png">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/full-slider.css">
-        <link rel="stylesheet" href="css/hover.css">
-        <link rel="stylesheet" href="css/animate.css">
-
+        <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/full-slider.css">
+        <link rel="stylesheet" type="text/css" href="css/hover.css">
+        <link rel="stylesheet" type="text/css" href="css/animate.css">
+        <!-- owl carousel showcase -->
+        <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="css/owl.theme.css">
+        <link rel="stylesheet" type="text/css" href="css/owl.transitions.css">
+        
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
@@ -42,46 +46,46 @@
                <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Our Collection of Templates &amp; Themes">Themes <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu wow fadeInDown animated" data-wow-duration="0.5s">
                         <li>
-                            <a href="/template-categories/all"><i class="fa fa-globe fa-fw"></i> All Templates &amp; Themes</a>
+                            <a href="#"><i class="fa fa-globe fa-fw"></i> All Templates &amp; Themes</a>
                         </li>
                         <li>
-                            <a href="/template-categories/popular"><i class="fa fa-star fa-fw"></i> Most Popular</a>
+                            <a href="#"><i class="fa fa-star fa-fw"></i> Most Popular</a>
                         </li>
                         <li>
-                            <a href="/buy-bootstrap-templates"><i class="fa fa-shopping-cart fa-fw"></i> Buy Bootstrap Templates</a>
+                            <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> Buy Bootstrap Templates</a>
                         </li>
                         <li class="divider"></li>
                         <li class="dropdown-header">
                             Template &amp; Theme Categories:
                         </li>
                         <li>
-                            <a href="/template-categories/admin-dashboard">Admin and Dashboard</a>
+                            <a href="#">Admin and Dashboard</a>
                         </li>
                         <li>
-                            <a href="/template-categories/full-websites">Full Websites</a>
+                            <a href="#">Full Websites</a>
                         </li>
                         <li>
-                            <a href="/template-categories/landing-pages">Landing Pages</a>
+                            <a href="#">Landing Pages</a>
                         </li>
                         <li>
-                            <a href="/template-categories/one-page">One Page Websites</a>
+                            <a href="#">One Page Websites</a>
                         </li>
                         <li>
-                            <a href="/template-categories/portfolios">Portfolios</a>
+                            <a href="/#">Portfolios</a>
                         </li>
                         <li>
-                            <a href="/template-categories/blogs">Blogs</a>
+                            <a href="#">Blogs</a>
                         </li>
                         <li>
-                            <a href="/template-categories/ecommerce">Ecommerce</a>
+                            <a href="#">Ecommerce</a>
                         </li>
                         <li>
-                            <a href="/template-categories/unstyled">Unstyled Starter Templates</a>
+                            <a href="#">Unstyled Starter Templates</a>
                         </li>
                         <li>
-                            <a href="/template-categories/navigation-menus">Navigation and Navbars</a>
+                            <a href="#">Navigation and Navbars</a>
                         </li>
                     </ul>
                 </li>
@@ -90,7 +94,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Bootstrap Related Resources">Resources <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu wow fadeInDown animated" data-wow-duration="0.5s">
                         <li>
                             <a href="/bootstrap-resources"><i class="fa fa-list fa-fw"></i> Bootstrap Resources List</a>
                         </li>
@@ -122,7 +126,7 @@
                 <div class="item active">
                     <!-- Set the first background image using inline CSS below. -->
                     <div class="fill">
-                        <img src="img/slider/impp-1108-01-z+circuit-spec-tuned-coilovers+side-view.jpg"/>
+                        <img src="img/slider/impp-1108-01-z+circuit-spec-tuned-coilovers+side-view.jpg" class="img-responsive" />
                     </div>
                     <div class="carousel-caption">
                         <h2>Per</h2>
@@ -131,7 +135,7 @@
                 <div class="item">
                     <!-- Set the second background image using inline CSS below. -->
                     <div class="fill">
-                        <img src="img/slider/impp_1007_05_o+garrett+gt3071r_turbo.jpg"/>
+                        <img src="img/slider/impp_1007_05_o+garrett+gt3071r_turbo.jpg" class="img-responsive" />
                     </div>
                     <div class="carousel-caption">
                         <h2>Besi</h2>
@@ -140,7 +144,7 @@
                 <div class="item">
                     <!-- Set the third background image using inline CSS below. -->
                     <div class="fill">
-                        <img src="img/slider/lamborghini-twin-turbo-engine.jpg"/>
+                        <img src="img/slider/lamborghini-twin-turbo-engine.jpg" class="img-responsive" />
                     </div>
                     <div class="carousel-caption">
                         <h2>Mbem</h2>
@@ -161,15 +165,15 @@
         <!-- product -->
         <div class="container-fluid">
             
-            <main class="container main-content" role="main">
+            <main class="container" role="main">
                 <section class="home-three-banner">
                   <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
                     <div class="col-xs-4 wow fadeInUp animated" style="visibility: visible" data-wow-delay="100ms">
                         <a href="#" title="">
-                            <img id="product-item" src="//cdn.shopify.com/s/files/1/0740/2841/t/3/assets/top-banner-home-1.jpg?284739358875588945" alt="" />
+                            <img id="product-item" src="//cdn.shopify.com/s/files/1/0740/2841/t/3/assets/top-banner-home-1.jpg?284739358875588945" class="img-responsive" alt="" />
                             <!-- Caption -->
                             <h4>
-                                <span style="font-size: 28px; color: #ffffff;">	
+                                <span id="product-caption">	
                                     New T-Shirts
                                 </span>
                             </h4>
@@ -178,10 +182,10 @@
                     </div>
                     <div class="col-xs-4 wow fadeInUp animated" data-wow-delay="300ms">
                         <a href="#" title="">
-                            <img id="product-item" src="//cdn.shopify.com/s/files/1/0740/2841/t/3/assets/top-banner-home-2.jpg?284739358875588945" alt="" />
+                            <img id="product-item" src="//cdn.shopify.com/s/files/1/0740/2841/t/3/assets/top-banner-home-2.jpg?284739358875588945" class="img-responsive" alt="" />
                             <!-- Caption -->
                             <h4>
-                                <span style="font-size: 28px; color: #ffffff;">	
+                                <span id="product-caption">	
                                     Shades
                                 </span>
                             </h4>
@@ -190,10 +194,10 @@
                     </div>
                     <div class="col-xs-4 wow fadeInUp animated" data-wow-delay="500ms">
                         <a href="#" title="">
-                            <img id="product-item" src="//cdn.shopify.com/s/files/1/0740/2841/t/3/assets/top-banner-home-3.jpg?284739358875588945" alt="" />
+                            <img id="product-item" src="//cdn.shopify.com/s/files/1/0740/2841/t/3/assets/top-banner-home-3.jpg?284739358875588945" class="img-responsive" alt="" />
                             <!-- Caption -->
                             <h4>
-                                <span style="font-size: 28px; color: #ffffff;">	
+                                <span id="product-caption">	
                                     New Lanyards
                                 </span>
                             </h4>
@@ -203,35 +207,111 @@
                   </div>
                 </section>
             </main>
+            
+            <!-- showcase -->
+            <div class="row wow fadeInUp animated" style="padding-left: 35px; padding-right: 35px;">
+                <div class="showcase-part"><h2>Latest Products</h2></div>
+                <div class="container">
+                    <div class="row row-centered product-showcase" style="margin-right: auto; margin-left: auto; ">
+                        <div class="col-md-2 item">
+                            <div class="thumbnail">
+                                <img src="img/kesv%20kecil.png" />
+                            </div>
+                            
+                            <div class="detail">
+                                Nama
+                            </div>
+                            
+                            <div class="harga">
+                                Harga
+                            </div>
+                        </div>
+                        <div class="col-md-2 item">
+                            <div class="thumbnail">
+                                <img src="img/kesv%20kecil.png" />
+                            </div>
+                            
+                            <div class="detail">
+                                Nama
+                            </div>
+                            
+                            <div class="harga">
+                                Harga
+                            </div>
+                        </div>
+                        <div class="col-md-2 item">
+                            <div class="thumbnail">
+                                <img src="img/kesv%20kecil.png" />
+                            </div>
+                            
+                            <div class="detail">
+                                Nama
+                            </div>
+                            
+                            <div class="harga">
+                                Harga
+                            </div>
+                        </div>
+                        <div class="col-md-2 item">
+                            <div class="thumbnail">
+                                <img src="img/kesv%20kecil.png" />
+                            </div>
+                            
+                            <div class="detail">
+                                Nama
+                            </div>
+                            
+                            <div class="harga">
+                                Harga
+                            </div>
+                        </div>
+                        <div class="col-md-2 item">
+                            <div class="thumbnail">
+                                <img src="img/kesv%20kecil.png" />
+                            </div>
+                            
+                            <div class="detail">
+                                Nama
+                            </div>
+                            
+                            <div class="harga">
+                                Harga
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!--
+                    <div class="product-showcase">
+                        <div class="item" >
+                            <div class="img">
+                                <img src="img/kesv%20kecil.png" class="img-responsive"/>
+                            </div>
+                            <div class="detail">
+                                <h4>Jam Tangan</h4>
+                            </div>
+                        </div>
+                        <div class="item" ></div>
+                        <div class="item" ></div>
+                        <div class="item" ></div>
+                        <div class="item" ></div>
+                    </div>-->
+                </div>
+            </div>
+            <!-- showcase -->
         </div>
         <!-- product -->
         
-        <!-- showcase -->
-        <div class="row">
-            <div class="section group">
-                <div class="col span_1_of_5">
-                1 of 5
-                </div>
-                <div class="col span_1_of_5">
-                1 of 5
-                </div>
-                <div class="col span_1_of_5">
-                1 of 5
-                </div>
-                <div class="col span_1_of_5">
-                1 of 5
-                </div>
-                <div class="col span_1_of_5">
-                1 of 5
-                </div>
-            </div>
+        <!-- Footer -->
+        <div class="row footer">
+            Footer
         </div>
-        <!-- showcase -->
 		
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="js/vendor/bootstrap.js"></script>
 		<script src="js/vendor/jquery.easing.min.js"></script>
 		<script src="js/vendor/wow.js"></script>
+        <!-- owl carousel js -->
+		<script src="js/vendor/owl.carousel.js"></script>
         
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
@@ -240,15 +320,35 @@
 
         <!-- Script to Activate the Carousel -->
         <script>
-        $('.carousel').carousel({
-            interval: 5000 //changes the speed
-        })
+            $('.carousel').carousel({
+                interval: 5000 //changes the speed
+            })
         </script>
         
         <!-- Script to Activate wow.js -->
         <script>
          new WOW().init();
         </script>
+        
+        <!-- Script to Activate owl carousel 
+        <script>
+            $(document).ready(function() {
+ 
+              $(".product-showcase").owlCarousel({
+
+                  autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+                  items : 5,
+                  dots : false,
+                  nav : false,
+                  itemsDesktop : [1199,3],
+                  itemsDesktopSmall : [979,3]
+                  
+
+              });
+
+            });
+        </script>-->
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

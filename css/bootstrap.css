@@ -4879,7 +4879,7 @@ a.badge:focus {
 .thumbnail {
   display: block;
   padding: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   line-height: 1.42857143;
   background-color: #fff;
   border: 1px solid #ddd;
@@ -4899,7 +4899,6 @@ a.thumbnail.active {
   border-color: #337ab7;
 }
 .thumbnail .caption {
-  padding: 9px;
   color: #333;
 }
 .alert {
@@ -6050,9 +6049,9 @@ button.close {
   position: relative;
 }
 .carousel-inner {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 .carousel-inner > .item {
   position: relative;
