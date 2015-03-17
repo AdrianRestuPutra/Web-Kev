@@ -52,7 +52,7 @@ textarea {
     padding: 0.2em 0;
 }
 
-footer {
+<!--footer {
     overflow: hidden;
     position: absolute;
     width: 100%;
@@ -60,7 +60,7 @@ footer {
     margin-right: auto;
     padding: 100px 50px;
     background-color: #222;
-}
+}-->
 
 .wrapper {
     min-height: 100%;
@@ -69,8 +69,15 @@ footer {
     margin: 0 auto -150px; /* the bottom margin is the negative value of the footer's         height */
 
 }
-.footer, .push {
+.footer{
     height: 150px; /* '.push' must be the same height as 'footer' */
+    background-color: #222;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.push {
+    height: 150px;
 }
 
 /* ==========================================================================
@@ -84,6 +91,7 @@ footer {
 
 .follow {
     width: 31.91489%;
+    height: 100%;
     float: left;
     margin-right: 2.12766%;
     text-align: left;
@@ -93,7 +101,7 @@ footer {
     width: 100%;
     display: block;
     padding: 0px;
-    margin: 25px 0px 45px;
+    margin: 25px 0px 0px 45px;
     display: inline-block;
     height: 60px;
     width: 60px;
@@ -137,16 +145,13 @@ footer {
     width: 60%;
     height: auto;
 }
-<<<<<<< HEAD
-=======
 
 #logo-resize {
-    width: 100%;
+    width: 60%;
     height: auto;
 }
 
 /* Small devices (tablets, 768px and up) */
->>>>>>> 3fc12aeea31b8a7cb383650e79a8aa4edafa6bde
 @media only screen and (max-width: 768px) {
     #logo-resize {
         position: absolute;
@@ -248,13 +253,6 @@ footer {
     text-align: center;
 }
 
-.footer {
-    height: 50px;
-    padding-left: 35px;
-    padding-right: 35px;
-    background-color: #222;
-    color: white;
-}
 
 
 /* ==========================================================================
