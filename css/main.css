@@ -16,10 +16,6 @@ html {
     text-shadow: none;
 }
 
-footer {
-    background: #050505;
-    text-shadow: none;
-}
 
 hr {
     display: block;
@@ -56,10 +52,47 @@ textarea {
     padding: 0.2em 0;
 }
 
+footer {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 100px 50px;
+    background-color: #222;
+}
+
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+.footer-main {
+    height: auto;
+    width: 100%;
+}
+
+.follow {
+    width: 31.91489%;
+    float: left;
+    margin-right: 2.12766%;
+    text-align: left;
+}
+
+.follow-icons {
+    width: 100%;
+    display: block;
+    padding: 0;
+    margin: 25px 0 45px;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
+
+.twitter-follow-icons {
+    overflow: hidden;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
 
 #custom-navbar {
 	padding: 20px;
