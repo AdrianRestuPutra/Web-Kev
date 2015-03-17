@@ -121,18 +121,30 @@
             <div class="carousel-inner">
                 <div class="item active">
                     <!-- Set the first background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                    <div class="fill">
+                        <img src="img/slider/impp-1108-01-z+circuit-spec-tuned-coilovers+side-view.jpg"/>
+                    </div>
                     <div class="carousel-caption">
-                        <h2>Caption 1</h2>
+                        <h2>Per</h2>
                     </div>
                 </div>
                 <div class="item">
                     <!-- Set the second background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                    <div class="fill">
+                        <img src="img/slider/impp_1007_05_o+garrett+gt3071r_turbo.jpg"/>
+                    </div>
+                    <div class="carousel-caption">
+                        <h2>Besi</h2>
+                    </div>
                 </div>
                 <div class="item">
                     <!-- Set the third background image using inline CSS below. -->
-                    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                    <div class="fill">
+                        <img src="img/slider/lamborghini-twin-turbo-engine.jpg"/>
+                    </div>
+                    <div class="carousel-caption">
+                        <h2>Mbem</h2>
+                    </div>
                 </div>
             </div>
 
@@ -151,22 +163,23 @@
             
             <main class="container main-content" role="main">
                 <section class="home-three-banner">
-                  <div class="row">
+                  <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
                     <div class="col-xs-4 wow fadeInUp animated" style="visibility: visible" data-wow-delay="100ms">
-                    <a href="https://stancenation-2.myshopify.com/collections/t-shirts/products/stancenation-est-2010-t-shirt-mens?variant=1093536220" title="">
-                    <img src="//cdn.shopify.com/s/files/1/0740/2841/t/3/assets/top-banner-home-1.jpg?284739358875588945" alt="" />
+                        <a href="#" title="">
+                            <img id="product-item" src="//cdn.shopify.com/s/files/1/0740/2841/t/3/assets/top-banner-home-1.jpg?284739358875588945" alt="" />
+                            <!-- Caption -->
+                            <h4>
+                                <span style="font-size: 28px; color: #ffffff;">	
+                                    New T-Shirts
+                                </span>
+                            </h4>
 
-                      <h4>
-                        <span style="font-size: 28px; color: #ffffff;">	
-                            New T-Shirts
-                        </span>
-                      </h4>
-
-                    </a>
+                        </a>
                     </div>
                     <div class="col-xs-4 wow fadeInUp animated" data-wow-delay="300ms">
-                        <a href="https://stancenation-2.myshopify.com/collections/types?q=Shades" title=""><img src="//cdn.shopify.com/s/files/1/0740/2841/t/3/assets/top-banner-home-2.jpg?284739358875588945" alt="" />
-
+                        <a href="#" title="">
+                            <img id="product-item" src="//cdn.shopify.com/s/files/1/0740/2841/t/3/assets/top-banner-home-2.jpg?284739358875588945" alt="" />
+                            <!-- Caption -->
                             <h4>
                                 <span style="font-size: 28px; color: #ffffff;">	
                                     Shades
@@ -176,14 +189,16 @@
                         </a>
                     </div>
                     <div class="col-xs-4 wow fadeInUp animated" data-wow-delay="500ms">
-                    <a href="https://stancenation-2.myshopify.com/products/stancenation-logo-lanyard?variant=1164923896" title=""><img src="//cdn.shopify.com/s/files/1/0740/2841/t/3/assets/top-banner-home-3.jpg?284739358875588945" alt="" />
-                        <h4>
-                            <span style="font-size: 28px; color: #ffffff;">	
-                                New Lanyards
-                            </span>
-                        </h4>
+                        <a href="#" title="">
+                            <img id="product-item" src="//cdn.shopify.com/s/files/1/0740/2841/t/3/assets/top-banner-home-3.jpg?284739358875588945" alt="" />
+                            <!-- Caption -->
+                            <h4>
+                                <span style="font-size: 28px; color: #ffffff;">	
+                                    New Lanyards
+                                </span>
+                            </h4>
 
-                    </a>
+                        </a>
                     </div>
                   </div>
                 </section>
@@ -193,6 +208,29 @@
      
             </main>
         </div>
+        <!-- product -->
+        
+        <!-- showcase -->
+        <div class="row">
+            <div class="section group">
+                <div class="col span_1_of_5">
+                1 of 5
+                </div>
+                <div class="col span_1_of_5">
+                1 of 5
+                </div>
+                <div class="col span_1_of_5">
+                1 of 5
+                </div>
+                <div class="col span_1_of_5">
+                1 of 5
+                </div>
+                <div class="col span_1_of_5">
+                1 of 5
+                </div>
+            </div>
+        </div>
+        <!-- showcase -->
 		
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="js/vendor/bootstrap.js"></script>
@@ -209,6 +247,11 @@
         $('.carousel').carousel({
             interval: 5000 //changes the speed
         })
+        </script>
+        
+        <!-- Script to Activate wow.js -->
+        <script>
+         new WOW().init();
         </script>
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
