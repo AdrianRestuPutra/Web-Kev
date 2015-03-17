@@ -16,6 +16,7 @@ html {
     text-shadow: none;
 }
 
+
 hr {
     display: block;
     height: 1px;
@@ -51,25 +52,115 @@ textarea {
     padding: 0.2em 0;
 }
 
+footer {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 100px 50px;
+    background-color: #222;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -150px; /* the bottom margin is the negative value of the footer's         height */
+
+}
+.footer, .push {
+    height: 150px; /* '.push' must be the same height as 'footer' */
+}
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+
+.footer-main {
+    height: auto;
+    width: 100%;
+}
+
+.follow {
+    width: 31.91489%;
+    float: left;
+    margin-right: 2.12766%;
+    text-align: left;
+}
+
+.follow-icons {
+    width: 100%;
+    display: block;
+    padding: 0px;
+    margin: 25px 0px 45px;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin-left: 0.5%;
+}
+
+.twitter-follow-icons {
+    overflow: hidden;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
+
+.facebook-follow-icons {
+    overflow: hidden;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
+
+.instagram-follow-icons {
+    overflow: hidden;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
+
+.path-follow-icons {
+    overflow: hidden;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+}
 
 #custom-navbar {
 	padding: 20px;
 	
 }
 
-#logo-resize {
+.logo-container{
     width: 60%;
     height: auto;
 }
+<<<<<<< HEAD
+=======
+
+#logo-resize {
+    width: 100%;
+    height: auto;
+}
+
+/* Small devices (tablets, 768px and up) */
+>>>>>>> 3fc12aeea31b8a7cb383650e79a8aa4edafa6bde
 @media only screen and (max-width: 768px) {
     #logo-resize {
         position: absolute;
-        width: 20%;
+        width: 15%;
         height: auto;
+    }
+    
+    .logo-container{
+        width: 125px;
+        height: auto;
+    }
+    
+    #navbar-resize {
+        padding-top: 10px;
     }
 }
 
