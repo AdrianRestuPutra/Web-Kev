@@ -1,0 +1,54 @@
+list item
+
+- coil over
+- lowering kit
+- pivot
+
+- velg  
+- turbo
+- exhaust system
+- strutbar
+
+- electric kids car
+
+- full body sticker
+
+- unichip/ecu
+- brakes
+- oli
+
+- engine
+- handling
+- accesories
+- toys ->kids electric cars
+
+
+list isi data
+- name
+- price
+- narative description
+- point description
+- quantity #bisa dimasukin (CALL FOR AVAILABLITY) <--radio button aja biar gampang ga usah ngetik lagi;
+- 
+-#sementara itu aja.
+
+
+
+------menu--------
+
+#SHOP
+ +MOTORSPORT
+  -Engine
+  -Handling
+  -Accesories
+  -Rims
+  -Full Body Stickers
+  -Turbo Placement / Instalation (gatau namanya kerenan mana)
+  -Custom Exhaust System
+ +KIDS E-CARS (E for electric)
+ +CLOTHES
+ +OTHERS
+#USED (ga ada kategori khusus karena item yg kejual ga akan di stock lagi #buat_backend, kasih_pilihan_dari_pertama, input_new_items_or_used_items)
+#BLOG
+#ABOUT (isinya FAQ, CONTACT, T&C, STORE POLICY, SHIPPING&DELIVERY)
+#LOGIN (contohnya yg stancenation)
