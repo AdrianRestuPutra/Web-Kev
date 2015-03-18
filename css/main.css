@@ -254,6 +254,34 @@ textarea {
 }
 
 
+/* =================== Showcase =====================*/
+.menu-banner {
+    width: 100%;
+    height: auto;
+}
+
+.sort-menu {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+}
+
+/*set a border on the images to prevent shifting*/ 
+#product_galler img {
+    border:2px solid white;
+} 
+/*Change the colour*/ 
+.active img{
+    border:2px solid #333 !important;
+}
+
+.product-description-list {
+    font-size: 18px;
+}
+
+.product-description-list ul {
+    list-style: circle;
+}
 
 /* ==========================================================================
    Media Queries
