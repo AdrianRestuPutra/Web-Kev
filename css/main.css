@@ -381,3 +381,6 @@ textarea {
         page-break-after: avoid;
     }
 }
+.dropdowns {
+    text-align: right;
+}
