@@ -382,5 +382,11 @@ textarea {
     }
 }
 .dropdowns {
-    text-align: right;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.dropdownsheader {
+    text-align: left;
+    font-size: 14px;
 }
