@@ -289,6 +289,7 @@ textarea {
 	padding: 10px 17px;
 	font-size: 27px;
 }
+
 /* ============== Search ================== */
 
 
@@ -400,6 +401,36 @@ textarea {
 .product-description-list ul {
     list-style: circle;
 }
+
+/* =================== Product Detail =====================*/
+.termscondition {
+    height: auto;
+    margin-top: 50px;
+}
+
+#related-product .item{
+  background: #3fbf79;
+  padding: 30px 0px;
+  margin: 10px;
+  color: #FFF;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  text-align: center;
+}
+.customNavigation{
+  text-align: center;
+}
+//use styles below to disable ugly selection
+.customNavigation a{
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+ 
 
 /* ==========================================================================
    Media Queries
