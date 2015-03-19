@@ -154,15 +154,17 @@ textarea {
 /* ================= LOGIN ===============*/
 .login-container {
     width: 300px;
-    height: 250px;
-    padding-left: 5px;
-    padding-right: 5px;
+    height: 270px;
+    padding: 5px;
+    background-color: #222;
+    margin-top: -5px;
+    margin-bottom: -5px;
 }
 
 .form-signin {
   max-width: 330px;
   padding: 15px;
-  margin: 0 auto;
+  margin: 0;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
@@ -222,7 +224,7 @@ textarea {
 
 /* ============== Search ================== */
 #search {
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
@@ -281,8 +283,8 @@ textarea {
     top: 15px;
     right: 15px;
     color: #fff;
-	background-color: #428bca;
-	border-color: #357ebd;
+	background-color: #222;
+	border-color: #fff;
 	opacity: 1;
 	padding: 10px 17px;
 	font-size: 27px;
@@ -339,10 +341,11 @@ textarea {
     float:none;
     /* reset the text-align */
     text-align:left;
-    margin: 8px;
-    width: 200px;
+    margin: 5px;
+    padding: 15px 10px;
+    width: 210px;
     height: auto;
-    background-color: antiquewhite;
+    background-color: #fefefe;
 }
 
 .product-showcase .item .thumbnail{
@@ -350,7 +353,7 @@ textarea {
     float:none;
     width: 100%;
     height: 200px;
-    background-color: burlywood;
+    background-color: #fff;
 }
 
 .product-showcase .item .thumbnail img {
@@ -360,11 +363,11 @@ textarea {
     float: left;
 }
 .product-showcase .item .detail {
-    font-size: 18px;
+    font-size: 20px;
     text-align: center;
 }
 .product-showcase .item .harga {
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
 }
 
