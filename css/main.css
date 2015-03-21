@@ -1,4 +1,4 @@
-/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+    /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
 
 html {
     color: #222;
@@ -345,7 +345,7 @@ textarea {
     float: left;
 }
 .product-showcase .item .detail {
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
 }
 .product-showcase .item .harga {
@@ -390,14 +390,15 @@ textarea {
 }
 
 #related-product .item{
-  background: #3fbf79;
-  padding: 30px 0px;
+  background: #ddd;
+  padding: 10px 0px;
   margin: 10px;
-  color: #FFF;
+  color: #000;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  text-align: center;
+  width: 200px;
+  height: 250px;
 }
 .customNavigation{
   text-align: center;
@@ -547,4 +548,26 @@ textarea {
 .dropdownsheader {
     text-align: left;
     font-size: 14px;
+}
+
+.smaller-thumbnail {
+    height: 75%;
+    width: 100%;
+}
+
+
+
+.details {
+    font-size: 24px;
+    margin: 2px;
+    text-align: center;
+}
+
+.price {
+    font-size: 18px;
+    text-align: center;
+}
+
+.banner {
+    width: 100%;
 }
