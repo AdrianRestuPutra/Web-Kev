@@ -70,7 +70,7 @@ textarea {
 
 }
 .footer{
-    height: 150px; /* '.push' must be the same height as 'footer' */
+    height: 250px; /* '.push' must be the same height as 'footer' */
     background-color: #222;
     padding-left: 35px;
     padding-right: 35px;
@@ -570,4 +570,46 @@ textarea {
 
 .banner {
     width: 100%;
+}
+
+.sitemap {
+    width: 63%;
+    float: left;
+    margin-left: 2.12766%;
+}
+
+.about {
+    margin: 3% 75px;
+    text-align: right;
+}
+
+.about ul {
+    list-style: none;
+    list-style-image: none;
+}
+
+.about a:link, a:visited, a:active {
+    color: #666;
+    font-size: 16px;
+}
+
+.about a:hover{
+    color: #999;
+    text-decoration: none;
+}
+
+.copyright {
+    width: 100%;
+    float: left;
+    height: 20px;
+    color: #aaa;
+    font-size: 12px;
+    text-align: left;
+    margin-top: 30px;
+    padding-left: 80px;
+}
+
+.logosuperkecil {
+    width: 25px;
+    height: auto;
 }
