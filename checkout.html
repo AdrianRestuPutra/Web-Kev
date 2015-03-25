@@ -153,66 +153,83 @@
             </div>
             <!-- Breadcrumbs -->
             
-                    <div class="col-md-6 col-md-offset-3" style="margin-bottom:15px">
-                        <div class="container-fluid">
-                            <!-- Product Name -->
-                            <div class="row">
-                                <center><strong><h1 class="col-centered">Form Delivery</h1></strong></center>
+            <!-- Product -->
+            <div class="container">
+                <div class="row">
+                    <div class="row col-md-8 col-md-offset-2 panel panel-default" style="margin-bottom: 15px;">
+                        
+                        <div class="row">                            
+                            <div class="col-md-11 panel panel-default" style="margin:15px 0px 0px 30px; height:auto">
+                                <tr>
+									<div class="col-md-5">
+										<td>Item</td>
+									</div>
+									<div class="col-md-5">
+										<td>Keterangan</td>
+									</div>
+									<div>
+										<td>Harga</td>
+									</div>
+								</tr>
+									<div class="col-md-5">
+										<td>Item 1</td>
+									</div>
+									<div class="col-md-5">
+										<td>Keterangan 1</td>
+									</div>
+									<div>
+										<td>Harga 1</td>
+									</div>
                             </div>
-                            
-                            <!-- product form -->
-                            <form action="checkout.html" method="get">
-                            <div class="form-group">
-                              <label for="fname">First Name:</label>
-                              <input type="text" class="form-control" id="fname">
-                            </div>
-                            
-                            <div class="form-group">
-                              <label for="lname">Last Name:</label>
-                              <input type="text" class="form-control" id="lname">
+							
+							<div class="row">
+								<span class="pull-right" style="margin:10px 60px 0px 0px">Total Harga</span>
+							</div>
+                        </div>
+						
+						<div class="order-delivery" style="margin-left: 55px">
+							<div class="form-group">
+                              <label for="name">Name:</label>
                             </div>
                             
                             <div class="form-group">
                               <label for="email">email:</label>
-                              <input type="text" class="form-control" id="email">
-                            </div>
-                            
-                            <div class="form-group">
-                              <label for="confemail">Confirm Email:</label>
-                              <input type="text" class="form-control" id="confemail">
                             </div>
                             
                             <div class="form-group">
                               <label for="nohp">No HP:</label>
-                              <input type="text" class="form-control" id="nohp">
                             </div>
                             
                             <div class="form-group">
                               <label for="notelp">No Telepon:</label>
-                              <input type="text" class="form-control" id="notelp">
                             </div>
                             
                             <div class="form-group">
                               <label for="address">Address:</label>
-                                <textarea type="text" row="30" cols="30" class="form-control" id="address"></textarea>
                             </div>
                             
                             <div class="form-group">
                               <label for="city">City:</label>
-                              <input type="text" class="form-control" id="city">
                             </div>
                             
                             <div class="form-group">
                               <label for="postalcode">Postal Code:</label>
-                              <input type="text" maxlength="5" class="form-control" id="postalcode">
                             </div>
-                            
-                             <a href="checkout.html"><button type="submit" class="btn btn-default pull-right">Next</button>
-                            </form>
+						</div>
+						
+						<div class="checkbox" style="margin-left: 20px">
+						  <label><input type="checkbox" value="">Mukuvomereza kutumiza ndalama kwa ife ndipo tilibe kutumiza katundu kwa inu</label>
+						</div>
+                        <div class="row" style="margin: 2px 35px 15px;">
+                            <a href="order_form.html"> <button type="submit" class="btn btn-default pull-right" style="margin-left: 5px;">Checkout</button></a>
                         </div>
                     </div>
+                    
                 </div>
-        
+                
+               
+            </div>
+        </div>
         
 <!--footer
         <footer>-->
@@ -351,9 +368,6 @@
 
             });
         </script>
-        
-        <!-- Script to handle search -->
-        
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
