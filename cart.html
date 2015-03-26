@@ -36,7 +36,7 @@
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>   
+                        <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand img-responsive" href="#">
                             <img src="img/kesv%20kecil.png" id="logo-resize">
@@ -44,7 +44,19 @@
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="custom-navbar">
+                    
                    <ul class="nav navbar-nav navbar-right">
+                       <!-- Search -->
+                        <li>
+                            <form id="search_box" name="search_box" class="navbar-form" role="search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" name="q">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default" type="submit" style="background-color: #222"><i class="glyphicon glyphicon-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                       </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Find The Best Item Just for You">SHOP <b class="caret"></b></a>
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333">
@@ -127,10 +139,7 @@
                         <a href="#" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge">4</span></a>
 
                     </li>
-                       <!-- Search -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
-                    </ul>
+                       
                 </ul>
                 </div>
                 <!-- /.navbar-collapse -->
