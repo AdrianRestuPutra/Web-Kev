@@ -450,6 +450,18 @@ textarea {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
  
+/* =================== About =====================*/
+.section-about-odd {
+    padding-top: 100px;
+    background-color: #444;
+    color: #fff;
+}
+
+.section-about-even {
+    padding-top: 100px;
+    background-color: #555;
+    color: #fff;
+}
 
 /* ==========================================================================
    Media Queries
