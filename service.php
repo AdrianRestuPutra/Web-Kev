@@ -1,16 +1,41 @@
 <!doctype html>
+
+<?php 
+	// CACHE TEMPLATE
+	require_once("phpFastCache/phpfastcache.php");
+	
+	$cache = phpFastCache();
+	if ($cache->get("cart") == null) {
+		// DOING INITIALIZE CACHE
+		// THIS SHOULD BE CALLED ONCE AND ONLY ONCE
+		$cart = array(
+						"product" => array(),
+						"last-update" => time(),
+				);
+		$cache->set("cart", $cart, 100);
+	}
+	
+	// GET JSON DATA FROM CACHE
+	$json_cart = $cache->get("cart");
+	
+	echo json_encode($json_cart);
+	
+	$lastUpdate = $json_cart["last-update"];
+	$productLength = count($json_cart["product"]);
+?>
+
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>KEV-GARAGE</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=640px, initial-scale=.5, maximum-scale=.5" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="apple-touch-icon" href="img/kesv%20kecil.png">
 
         <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
-        <link rel="stylesheet" typ
-              e="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/full-slider.css">
         <link rel="stylesheet" type="text/css" href="css/hover.css">
@@ -19,6 +44,9 @@
         <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
         <link rel="stylesheet" type="text/css" href="css/owl.theme.css">
         <link rel="stylesheet" type="text/css" href="css/owl.transitions.css">
+        
+        <!--font-->
+        <link rel="stylesheet" type="text/css" href=""/>
         
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
@@ -46,8 +74,7 @@
                 <div class="collapse navbar-collapse" id="custom-navbar">
                     
                    <ul class="nav navbar-nav navbar-right">
-                       <!-- Search -->
-                   
+                       
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Find The Best Item Just for You">SHOP <b class="caret"></b></a>
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333">
@@ -78,16 +105,16 @@
                             </li>
                             <li class="divider"></li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">SERVICE</a>
+                                <a href="service.html" style="color: #fff;">SERVICE</a>
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Full Body Sticker</a>
+                                <a href="#fullbodysticker" style="color: #fff;">Full Body Sticker</a>
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Turbo Instalation</a>
+                                <a href="#turboinstalation" style="color: #fff;">Turbo Instalation</a>
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Car Consultation</a>
+                                <a href="#carconsultation" style="color: #fff;">Car Consultation</a>
                             </li>
                             <li class="divider"></li>
                              <li class="dropdownsheader">
@@ -109,37 +136,39 @@
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333;">
 
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">CONTACT</a>
+                                <a href="#contact" style="color: #fff;">CONTACT</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">FAQ</a>
+                                <a href="#faq" style="color: #fff;">FAQ</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">TERMS &amp; CONDITION</a>
+                                <a href="#termscondition" style="color: #fff;">TERMS &amp; CONDITION</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">STORE POLICY</a>
+                                <a href="#storepolicy" style="color: #fff;">STORE POLICY</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">SHIPPING &amp; DELIVERY</a>
+                                <a href="#shippingdelivery" style="color: #fff;">SHIPPING &amp; DELIVERY</a>
                             </li>
                         </ul>
                     </li>
                        <!-- Cart -->
                     <li>
-                        <a href="#" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge">4</span></a>
+                        <a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php $productLength;?></span></a>
 
                     </li>
-                       <li>
-                            <form id="search_box" name="search_box" class="navbar-form" role="search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search" name="q">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-default" type="submit" style="background-color: #222"><i class="glyphicon glyphicon-search"></i></button>
-                                    </div>
+                       
+                   <!-- Search -->
+                    <li>
+                        <form id="search_box" name="search_box" class="navbar-form" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" name="q">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit" style="background-color: #222"><i class="glyphicon glyphicon-search"></i></button>
                                 </div>
-                            </form>
-                       </li>
+                            </div>
+                        </form>
+                   </li>
                 </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -150,71 +179,53 @@
 
         
         
-        <div class="container-fluid" style="margin-top: 110px">
-            
-                    <div class="col-md-6 col-md-offset-3" style="margin-bottom:15px">
-                        <div class="container-fluid forms">
-                            <!-- Product Name -->
-                            <div class="row">
-                                <center><strong><h1 class="col-centered">Form Delivery</h1></strong></center>
-                            </div>
-                            
-                            <!-- product form -->
-                            <form action="checkout.html" method="get">
-                            <div class="form-group">
-                              <label for="fname">First Name:</label>
-                              <input type="text" class="form-control" id="fname">
-                            </div>
-                            
-                            <div class="form-group">
-                              <label for="lname">Last Name:</label>
-                              <input type="text" class="form-control" id="lname">
-                            </div>
-                            
-                            <div class="form-group">
-                              <label for="email">email:</label>
-                              <input type="text" class="form-control" id="email">
-                            </div>
-                            
-                            <div class="form-group">
-                              <label for="confemail">Confirm Email:</label>
-                              <input type="text" class="form-control" id="confemail">
-                            </div>
-                            
-                            <div class="form-group">
-                              <label for="nohp">No HP:</label>
-                              <input type="text" class="form-control" id="nohp">
-                            </div>
-                            
-                            <div class="form-group">
-                              <label for="notelp">No Telepon:</label>
-                              <input type="text" class="form-control" id="notelp">
-                            </div>
-                            
-                            <div class="form-group">
-                              <label for="address">Address:</label>
-                                <textarea type="text" row="30" cols="30" class="form-control" id="address"></textarea>
-                            </div>
-                            
-                            <div class="form-group">
-                              <label for="city">City:</label>
-                              <input type="text" class="form-control" id="city">
-                            </div>
-                            
-                            <div class="form-group">
-                              <label for="postalcode">Postal Code:</label>
-                              <input type="text" maxlength="5" class="form-control" id="postalcode">
-                            </div>
-                            
-                                <a href="checkout.html"><button type="submit" class="btn btn-default pull-right" style="margin-top:20px;">Next</button></a>
-                            </form>
-                        </div>
+        <!-- Section FBS -->
+        <section id="fullbodysticker" class="section-about-even">
+            <div class="container">
+                <div class="row">
+                    <div style="padding: 0 10px 10px;">
+                        <h3>Full Body Sticker</h3>
+                        <img src="img/banner/kids-sq-banner.png" style="width:60%; height : auto; margin-left:auto; margin-right:auto; display:block;">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
                     </div>
                 </div>
+            </div>
+        </section>
         
+        <!-- Section Turbo -->
+        <section id="turboinstalation" class="section-about-odd">
+            <div class="container">
+                <div class="row">
+                    <div style="padding: 0 10px 10px;">
+                        <h3>Turbo Instalation</h3>
+                         <img src="img/banner/kids-sq-banner.png" style="width:60%; height : auto; margin-left:auto; margin-right:auto; display:block;">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+            
+        <!-- Section Carconsul -->
+        <section id="carconsultation" class="section-about-even">
+            <div class="container">
+                <div class="row">
+                    <div style="padding: 0 10px 10px;">
+                        <h3>Car Consultation</h3>
+                         <img src="img/banner/kids-sq-banner.png" style="width:60%; height : auto; margin-left:auto; margin-right:auto; display:block;">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
         
-<!--footer
-        <footer>-->
+      
+        
+        <div class="push" style="background-color: #444"></div>
+        
+        <!-- footer -->
         
         <div class="footer">
             <div class="container">
@@ -270,28 +281,19 @@
             </div>
         </div>
 
-        <!--</footer>-->        <!--</footer>-->
+        <!-- footer -->
 
-        
-        
-        <!-- Full page search -->
-        <div id="search">
-            <button type="button" class="close" style="margin-top: 100px;">×</button>
-            <form>
-                <input type="search" value="" placeholder="type keyword(s) here" />
-                <button type="submit" class="btn btn-primary">Search</button>
-            </form>
-        </div>
-        
 		
+        
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="js/vendor/bootstrap.js"></script>
 		<script src="js/vendor/jquery.easing.min.js"></script>
 		<script src="js/vendor/wow.js"></script>
         <!-- owl carousel js -->
 		<script src="js/vendor/owl.carousel.js"></script>
-        <!-- elevate zoom -->
-        <script src="js/vendor/jquery.elevateZoom-3.0.8.min.js"></script>
+        <!-- mouse scroll -->
+        <script src="js/vendor/mousescroll.js"></script>
+        <script src="js/vendor/smoothscroll.js"></script>
         
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
@@ -310,49 +312,43 @@
             new WOW().init();
         </script>
         
-        <!-- Script for elevate zoom -->
+        <!-- Script to handle scroll -->
         <script>
-            //initiate the plugin and pass the id of the div containing gallery images 
-            $("#product_image").elevateZoom({
-                zoomType: "inner",
-                zoomWindowFadeIn: 500,
-                zoomWindowFadeOut: 750,
-                gallery:'product_gallery', 
-                cursor: 'crosshair', 
-                galleryActiveClass: 'active', 
-                imageCrossfade: true, 
-                lensFadeIn: 500, 
-                loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 
-            //pass the images to Fancybox 
-            $("#product_image").bind("click", function(e) { 
-                var ez = $('#product_image').data('elevateZoom');	
-            $.fancybox(ez.getGalleryList()); return false; });
-        </script>
-        
-        <!-- Script to Activate owl carousel -->
-        <script>
-            $(document).ready(function() {
- 
-              $("#related-product").owlCarousel({
+            // Navigation Scroll
+            $(window).scroll(function(event) {
+                Scroll();
+            });
 
-                  autoPlay: 3000, //Set AutoPlay to 3 seconds
+            $('.navbar-collapse ul li a').on('click', function() {  
+                $('html, body').animate({scrollTop: $(this.hash).offset().top - 5}, 1000);
+                return false;
+            });
 
-                  items : 5,
-                  stagePadding : 50,
-                  loop : true,
-                  dots : false,
-                  nav : false,
-                  itemsDesktop : [1199,3],
-                  itemsDesktopSmall : [979,3]
-                  
+            // User define function
+            function Scroll() {
+                var contentTop      =   [];
+                var contentBottom   =   [];
+                var winTop      =   $(window).scrollTop();
+                var rangeTop    =   200;
+                var rangeBottom =   500;
+                $('.navbar-collapse').find('.scroll a').each(function(){
+                    contentTop.push( $( $(this).attr('href') ).offset().top);
+                    contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
+                })
+                $.each( contentTop, function(i){
+                    if ( winTop > contentTop[i] - rangeTop ){
+                        $('.navbar-collapse li.scroll')
+                        .removeClass('active')
+                        .eq(i).addClass('active');			
+                    }
+                })
+            };
 
-              });
-
+            $('#tohash').on('click', function(){
+                $('html, body').animate({scrollTop: $(this.hash).offset().top - 5}, 1000);
+                return false;
             });
         </script>
-        
-        <!-- Script to handle search -->
-        
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

@@ -1,4 +1,84 @@
 <!doctype html>
+
+<?php 
+	// CACHE TEMPLATE
+	require_once("phpFastCache/phpfastcache.php");
+	
+	$cache = phpFastCache();
+	if ($cache->get("cart") == null) {
+		// DOING INITIALIZE CACHE
+		// THIS SHOULD BE CALLED ONCE AND ONLY ONCE
+		$cart = array(
+						"product" => array(),
+						"last-update" => time(),
+				);
+		$cache->set("cart", $cart, 100);
+	}
+	
+	// GET JSON DATA FROM CACHE
+	$json_cart = $cache->get("cart");
+	
+	echo json_encode($json_cart);
+	
+	$lastUpdate = $json_cart["last-update"];
+	$productLength = count($json_cart["product"]);
+?>
+
+<?php
+	// API TEMPLATE PRODUCT
+	$url = "http://192.168.1.108/kevgarage/index.php?r=api/ProductDetail&idProduct=";
+	
+	$idProduct = 0;
+	$nameProduct = "";
+	$idCategory = 0;
+	$stock = 0;
+	$price = 0;
+	$imageName1 = "";
+	$imageName2 = "";
+	$imageName3 = "";
+	$imageName4 = "";
+	$description = "";
+	$descriptionList = "";
+	
+	
+	if (isset($_GET["idProduct"]) || $_POST["idProduct"]) {
+		if (isset($_GET["idProduct"])) 
+			$idProduct = $_GET["idProduct"];
+		else $idProduct = $_POST["idProduct"];
+		$json_get = json_decode(file_get_contents($url.$idProduct));
+		
+		$json = $json_get;
+		echo json_encode($json);
+		
+		$nameProduct = $json->nameProduct;
+		$idCategory = $json->idCategory;
+		$stock = $json->stock;
+		$price = $json->price;
+		$imageName1 = $json->imageName1;
+		$imageName2 = $json->imageName2;
+		$imageName3 = $json->imageName3;
+		$imageName4 = $json->imageName4;
+		$description = $json->description;
+		$descriptionList = $json->descriptionList;
+	}
+?>
+
+<?php 
+	// ADD TO CART TEMPLATE
+	if (isset($_POST["qty"])) {
+		$qty = $_POST["qty"];
+		
+		$json_cart["product"][$productLength] = array(
+														"idProduct" => $_POST["idProduct"],
+														"qty" => $qty,
+													);
+		
+		$productLength++;
+		
+		$cache->set("cart", $json_cart, 100);
+	}
+?>
+
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
@@ -9,8 +89,7 @@
         <link rel="apple-touch-icon" href="img/kesv%20kecil.png">
 
         <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
-        <link rel="stylesheet" typ
-              e="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/full-slider.css">
         <link rel="stylesheet" type="text/css" href="css/hover.css">
@@ -127,7 +206,7 @@
                     </li>
                        <!-- Cart -->
                     <li>
-                        <a href="#" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge">4</span></a>
+                        <a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>
 
                     </li>
                        <li>
@@ -174,12 +253,12 @@
                         <div class="container-fluid">
                             <!-- Product Name -->
                             <div class="row">
-                                <h1>Product Name</h1>
+                                <h1><?php echo $nameProduct?></h1>
                             </div>
                             
                             <!-- product desc -->
                             <div class="row product-desc">
-                                <p>Product description written</p>
+                                <p><?php echo $description?></p>
                             </div>
                             <!-- Description List -->
                             <div class="row product-description-list">
@@ -192,17 +271,18 @@
                             </div>
                              <div class="row prices">
                                 <h3>PRICE :</h3>
-                                 <p>IDR 25.000.000</p>
+                                 <p>IDR <?php echo $price?></p>
 
                             </div>
                             
                             <!-- product price and buy button -->
                             <div class="row" style="margin-top: 10px;">
-                                <form>
+                                <form method="POST" action="product_detail.php">
                                     <div class="col-md-4 quantity-product">
                                         <div class="input-group">
                                             <span class="input-group-addon" id="basic-addon1">Quantity</span>
-                                            <input type="number" class="form-control" min="1" max="10" value="1" style="width: 50px">
+                                            <input type="number" class="form-control" min="<?php if ($stock == 0) echo 0; else echo 1;?>" max="<?php echo $stock?>" value="1" style="width: 50px" name="qty">
+											<input value="<?php echo $idProduct?>" name="idProduct" type="hidden">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
@@ -439,28 +519,6 @@
 
               });
 
-            });
-        </script>
-        
-        <!-- Script to handle search -->
-        <script>
-            $(function () {
-                $('a[href="#search"]').on('click', function(event) {
-                    event.preventDefault();
-                    $('#search').addClass('open');
-                    $('#search > form > input[type="search"]').focus();
-                });
-
-                $('#search, #search button.close').on('click keyup', function(event) {
-                    if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-                        $(this).removeClass('open');
-                    }
-                });
-
-                $('form').submit(function(event) {
-                    event.preventDefault();
-                    return false;
-                })
             });
         </script>
         

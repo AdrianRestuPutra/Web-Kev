@@ -1,11 +1,57 @@
 <!doctype html>
+
+<?php 
+	// CACHE TEMPLATE
+	require_once("phpFastCache/phpfastcache.php");
+	
+	$cache = phpFastCache();
+	if ($cache->get("cart") == null) {
+		// DOING INITIALIZE CACHE
+		// THIS SHOULD BE CALLED ONCE AND ONLY ONCE
+		$cart = array(
+						"product" => array(),
+						"last-update" => time(),
+				);
+		$cache->set("cart", $cart, 100);
+	}
+	
+	// GET JSON DATA FROM CACHE
+	$json_cart = $cache->get("cart");
+	
+	echo json_encode($json_cart);
+	
+	$lastUpdate = $json_cart["last-update"];
+	$productLength = count($json_cart["product"]);
+?>
+
+<?php
+	// API TEMPLATE PRODUCT
+	$url = "http://192.168.1.108/kevgarage/index.php?r=api/SortNewest";
+	
+	$idProduct = 0;
+	$nameProduct = "";
+	$idCategory = 0;
+	$stock = 0;
+	$price = 0;
+	$imageName1 = "";
+	$imageName2 = "";
+	$imageName3 = "";
+	$imageName4 = "";
+	$description = "";
+	$descriptionList = "";
+	
+	
+	$json_get = json_decode(file_get_contents($url));
+?>
+
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>KEV-GARAGE</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=640px, initial-scale=.5, maximum-scale=.5" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="apple-touch-icon" href="img/kesv%20kecil.png">
 
         <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
@@ -18,6 +64,11 @@
         <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
         <link rel="stylesheet" type="text/css" href="css/owl.theme.css">
         <link rel="stylesheet" type="text/css" href="css/owl.transitions.css">
+        
+        <!--font-->
+        <link rel="stylesheet" type="text/css" href=""/>
+        
+        
         
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
@@ -43,7 +94,10 @@
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="custom-navbar">
+                    
                    <ul class="nav navbar-nav navbar-right">
+                       <!-- Search -->
+                   
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Find The Best Item Just for You">SHOP <b class="caret"></b></a>
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333">
@@ -123,13 +177,19 @@
                     </li>
                        <!-- Cart -->
                     <li>
-                        <a href="#" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge">4</span></a>
+                        <a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>
 
                     </li>
-                       <!-- Search -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
-                    </ul>
+                       <li>
+                            <form id="search_box" name="search_box" class="navbar-form" role="search" method="GET" action="showcase_item.php">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" name="nameProduct">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default" type="submit" style="background-color: #222"><i class="glyphicon glyphicon-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                       </li>
                 </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -139,7 +199,7 @@
         </nav>
 
         <!-- Full Page Image Background Carousel Header -->
-        <div class="container-fluid fill">
+        <div class="container-fluid" style="height: 100%;">
             <div id="myCarousel" class="row carousel slide">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -237,7 +297,7 @@
                 </section>
                 
             </main>
-            
+        </div>
             <!-- showcase -->
             <div class="row wow fadeInUp animated" style="padding-left: 35px; padding-right: 35px;">
                 <div class="showcase-part"><h2>Featured Products</h2></div>
@@ -310,83 +370,47 @@
                         </div>
                         
                     </div>
-                    <!--
                 </div>
             </div>
             <!-- showcase -->
-        </div>
         
           <!-- showcase -->
             <div class="row wow fadeInUp animated" style="padding-left: 35px; padding-right: 35px;">
                 <div class="showcase-part"><h2>Latest Products</h2></div>
                 <div class="container">
                     <div class="row row-centered product-showcase" style="margin-right: auto; margin-left: auto; ">
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/kesv%20kecil.png" />
-                            </div>
-                            
-                            <div class="detail">
-                                Nama
-                            </div>
-                            
-                            <div class="harga">
-                                Harga
-                            </div>
-                        </div>
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/kesv%20kecil.png" />
-                            </div>
-                            
-                            <div class="detail">
-                                Nama
-                            </div>
-                            
-                            <div class="harga">
-                                Harga
-                            </div>
-                        </div>
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/kesv%20kecil.png" />
-                            </div>
-                            
-                            <div class="detail">
-                                Nama
-                            </div>
-                            
-                            <div class="harga">
-                                Harga
-                            </div>
-                        </div>
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/kesv%20kecil.png" />
-                            </div>
-                            
-                            <div class="detail">
-                                Nama
-                            </div>
-                            
-                            <div class="harga">
-                                Harga
-                            </div>
-                        </div>
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/kesv%20kecil.png" />
-                            </div>
-                            
-                            <div class="detail">
-                                Nama
-                            </div>
-                            
-                            <div class="harga">
-                                Harga
-                            </div>
-                        </div>
-                        
+						<!-- BEGIN -->
+						<?php 
+							for($i=0;$i<5;$i++) {
+								$json = $json_get[$i];
+								//echo json_encode($json);
+								
+								$nameProduct = $json->nameProduct;
+								$idCategory = $json->idCategory;
+								$stock = $json->stock;
+								$price = $json->price;
+								$imageName1 = $json->imageName1;
+								$imageName2 = $json->imageName2;
+								$imageName3 = $json->imageName3;
+								$imageName4 = $json->imageName4;
+								$description = $json->description;
+								$descriptionList = $json->descriptionList;
+						?>
+								<div class="col-md-2 item">
+									<div class="thumbnail">
+										<img src="<?php echo 'http://192.168.1.108/kevgarage/images/products/'.$imageName1;?>" />
+									</div>
+									
+									<div class="detail">
+										<?php echo $nameProduct;?>
+									</div>
+									
+									<div class="harga">
+										<?php echo $price;?>
+									</div>
+								</div>
+						<?php }?>
+                        <!--END-->
                     </div>
                     <!--
                     <div class="product-showcase">
@@ -415,9 +439,11 @@
         
         <!--footer
         <footer>-->
-                <div class="footer">
-                    <div class="container">
-                    <div class="follow">
+        
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-4 col-centered ">
                         <h4>
                             <span style="font-size: 28px; color: #666;">	
                             Follow
@@ -444,8 +470,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="sitemap">
-                        <div class="about">
+                    <div class="col-md-4 col-xs-4 col-md-offset-4 col-xs-offset-4 col-centered sitemap-copy">
+                        <div class="about-copy">
                              <ul>
                                  <li><a href="#">BLOG</a></li>
                                  <li><a href="#">FAQ</a></li>
@@ -455,11 +481,21 @@
                                  <li><a href="#">SHIPPING &amp; DELIVERY</a></li>
                             </ul>
                         </div>
-                        <div class="copyright"><p>2015 © <a href="index.html">KevGarage</a> by <a href="http://www.zonadolan.com"><img src="img/button/facebookfooterlogo.png" class="logosuperkecil"></a></p></div>
-                    </div>
                     </div>
                 </div>
-        <!--</footer>-->
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 copyright col-centered">
+                        <p>
+                            2015 © <a href="index.html">KevGarage</a> by <a href="http://www.zonadolan.com">
+                            <img src="img/button/facebookfooterlogo.png" class="logosuperkecil"></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--</footer>-->        <!--</footer>-->
+
         
         <!-- Full page search -->
         <div id="search">
@@ -493,28 +529,6 @@
         <!-- Script to Activate wow.js -->
         <script>
             new WOW().init();
-        </script>
-        
-        <!-- Script to handle search -->
-        <script>
-            $(function () {
-                $('a[href="#search"]').on('click', function(event) {
-                    event.preventDefault();
-                    $('#search').addClass('open');
-                    $('#search > form > input[type="search"]').focus();
-                });
-
-                $('#search, #search button.close').on('click keyup', function(event) {
-                    if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-                        $(this).removeClass('open');
-                    }
-                });
-
-                $('form').submit(function(event) {
-                    event.preventDefault();
-                    return false;
-                })
-            });
         </script>
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

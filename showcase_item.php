@@ -1,12 +1,41 @@
 <!doctype html>
+
+<?php 
+	// CACHE TEMPLATE
+	require_once("phpFastCache/phpfastcache.php");
+	
+	$cache = phpFastCache();
+	if ($cache->get("cart") == null) {
+		// DOING INITIALIZE CACHE
+		// THIS SHOULD BE CALLED ONCE AND ONLY ONCE
+		$cart = array(
+						"product" => array(),
+						"last-update" => time(),
+				);
+		$cache->set("cart", $cart, 100);
+	}
+	
+	// GET JSON DATA FROM CACHE
+	$json_cart = $cache->get("cart");
+	
+	echo json_encode($json_cart);
+	
+	$lastUpdate = $json_cart["last-update"];
+	$productLength = count($json_cart["product"]);
+?>
+
+<?php
+	// API TEMPLATE PRODUCT
+	$url = "http://192.168.1.108/kevgarage/index.php?r=api/SearchShowcase&nameProduct=";
+?>
+
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>KEV-GARAGE</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=640px, initial-scale=.5, maximum-scale=.5" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="img/kesv%20kecil.png">
 
         <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
@@ -19,9 +48,6 @@
         <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
         <link rel="stylesheet" type="text/css" href="css/owl.theme.css">
         <link rel="stylesheet" type="text/css" href="css/owl.transitions.css">
-        
-        <!--font-->
-        <link rel="stylesheet" type="text/css" href=""/>
         
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
@@ -49,7 +75,8 @@
                 <div class="collapse navbar-collapse" id="custom-navbar">
                     
                    <ul class="nav navbar-nav navbar-right">
-                       
+                       <!-- Search -->
+                   
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Find The Best Item Just for You">SHOP <b class="caret"></b></a>
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333">
@@ -80,16 +107,16 @@
                             </li>
                             <li class="divider"></li>
                             <li class="dropdownsheader">
-                                <a href="service.html" style="color: #fff;">SERVICE</a>
+                                <a href="#" style="color: #fff;">SERVICE</a>
                             </li>
                             <li class="dropdowns">
-                                <a href="#fullbodysticker" style="color: #fff;">Full Body Sticker</a>
+                                <a href="#" style="color: #fff;">Full Body Sticker</a>
                             </li>
                             <li class="dropdowns">
-                                <a href="#turboinstalation" style="color: #fff;">Turbo Instalation</a>
+                                <a href="#" style="color: #fff;">Turbo Instalation</a>
                             </li>
                             <li class="dropdowns">
-                                <a href="#carconsultation" style="color: #fff;">Car Consultation</a>
+                                <a href="#" style="color: #fff;">Car Consultation</a>
                             </li>
                             <li class="divider"></li>
                              <li class="dropdownsheader">
@@ -111,39 +138,37 @@
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333;">
 
                             <li class="dropdownsheader">
-                                <a href="#contact" style="color: #fff;">CONTACT</a>
+                                <a href="#" style="color: #fff;">CONTACT</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#faq" style="color: #fff;">FAQ</a>
+                                <a href="#" style="color: #fff;">FAQ</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#termscondition" style="color: #fff;">TERMS &amp; CONDITION</a>
+                                <a href="#" style="color: #fff;">TERMS &amp; CONDITION</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#storepolicy" style="color: #fff;">STORE POLICY</a>
+                                <a href="#" style="color: #fff;">STORE POLICY</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#shippingdelivery" style="color: #fff;">SHIPPING &amp; DELIVERY</a>
+                                <a href="#" style="color: #fff;">SHIPPING &amp; DELIVERY</a>
                             </li>
                         </ul>
                     </li>
                        <!-- Cart -->
                     <li>
-                        <a href="#" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge">4</span></a>
+                        <a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php $productLength;?></span></a>
 
                     </li>
-                       
-                   <!-- Search -->
-                    <li>
-                        <form id="search_box" name="search_box" class="navbar-form" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" name="q">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit" style="background-color: #222"><i class="glyphicon glyphicon-search"></i></button>
+                       <li>
+                            <form id="search_box" name="search_box" class="navbar-form" role="search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" name="q">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default" type="submit" style="background-color: #222"><i class="glyphicon glyphicon-search"></i></button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                   </li>
+                            </form>
+                       </li>
                 </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -154,53 +179,114 @@
 
         
         
-        <!-- Section FBS -->
-        <section id="fullbodysticker" class="section-about-even">
-            <div class="container">
-                <div class="row">
-                    <div style="padding: 0 10px 10px;">
-                        <h3>Full Body Sticker</h3>
-                        <img src="img/banner/kids-sq-banner.png" style="width:60%; height : auto; margin-left:auto; margin-right:auto; display:block;">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Section Turbo -->
-        <section id="turboinstalation" class="section-about-odd">
-            <div class="container">
-                <div class="row">
-                    <div style="padding: 0 10px 10px;">
-                        <h3>Turbo Instalation</h3>
-                         <img src="img/banner/kids-sq-banner.png" style="width:60%; height : auto; margin-left:auto; margin-right:auto; display:block;">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="container-fluid" style="margin-top: 110px">
             
-        <!-- Section Carconsul -->
-        <section id="carconsultation" class="section-about-even">
-            <div class="container">
-                <div class="row">
-                    <div style="padding: 0 10px 10px;">
-                        <h3>Car Consultation</h3>
-                         <img src="img/banner/kids-sq-banner.png" style="width:60%; height : auto; margin-left:auto; margin-right:auto; display:block;">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
+            <!-- Banner menu -->
+            <div class="row">
+                <img src="img/banner/kidscar%20banner2.jpg" class="img-responsive banner" />
+            </div>
+            <!-- Banner menu -->
+            
+            <!-- showcase -->
+            <div class="row wow fadeInUp animated" style="padding-left: 35px; padding-right: 35px;">
+                <div class="row" style="margin-bottom: 30px; padding-bottom : 15px;">
+                    <!-- sort 1 -->
+                    <div class="btn-group sort-menu">
+                      <button type="button" class="btn btn-default">Sort by</button>
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                      </button>
+                      <ul class="dropdown-menu wow fadeIn animated" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#">Separated link</a></li>
+                      </ul>
                     </div>
+                    
+                    
                 </div>
             </div>
-        </section>
+            <!-- showcase -->                
+		</div>
+		
+			<div class="container">
+				<div class="row row-centered product-showcase" style="margin-right: auto; margin-left: auto; ">
+					<!-- BARIS 1 -->
+					<?php
+						$offset = 0;
+						if (isset($_GET['offset'])) $offset = 20 * ((int)$_GET['offset'] - 1);
+						$nameProduct = $_GET["nameProduct"];
+						$json_get = json_decode(file_get_contents($url.$nameProduct.'&limit=20&offset='.$offset));
+						for($i=0;$i<count($json_get);$i++) {
+							$json = $json_get[$i];
+							//echo json_encode($json);
+							
+							$nameProduct = $json->nameProduct;
+							$idCategory = $json->idCategory;
+							$stock = $json->stock;
+							$price = $json->price;
+							$imageName1 = $json->imageName1;
+							$imageName2 = $json->imageName2;
+							$imageName3 = $json->imageName3;
+							$imageName4 = $json->imageName4;
+							$description = $json->description;
+							$descriptionList = $json->descriptionList;
+							?>
+								<div class="col-md-2 item">
+									<div class="thumbnail">
+										<img src="<?php echo 'http://192.168.1.108/kevgarage/images/products/'.$imageName1;?>" />
+									</div>
+									
+									<div class="detail">
+										<?php echo $nameProduct;?>
+									</div>
+									
+									<div class="harga">
+										<?php echo $price;?>
+									</div>
+								</div>
+						<?php }
+					?>
+					<!-- END BARIS 1-->
+				</div>
+			</div>
+            
+        <div class="push"></div>
+            <!-- pagination -->
+            <div class="row" style="padding-left: 35px; padding-right: 35px; background-color: #ccc" >
+                <nav class="navbar-right">
+                  <ul class="pagination">
+                    <li class="disabled"> <!-- nanti dynamic disablednya -->
+                      <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+					<?php
+						$json_get = json_decode(file_get_contents('http://192.168.1.108/kevgarage/index.php?r=api/Search&nameProduct='.$_GET["nameProduct"]));
+						$paging = count($json_get) / 20 + 1;
+						for($i=1;$i<=$paging;$i++) {
+					?>
+							<li><a href="showcase_item.php?nameProduct=<?php echo $_GET['nameProduct']?>&offset=<?php echo $i?>"><?php echo $i?></a></li>
+					<?php }?>
+                    <li>
+                      <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+            </div>
+            <!-- pagination -->
+
         
-      
+        <!-- showcase -->
+        <!--</div>-->
         
-        <div class="push" style="background-color: #444"></div>
         
-        <!-- footer -->
+<!--footer
+        <footer>-->
         
         <div class="footer">
             <div class="container">
@@ -256,19 +342,26 @@
             </div>
         </div>
 
-        <!-- footer -->
+        <!--</footer>-->        <!--</footer>-->
 
-		
         
+        
+        <!-- Full page search -->
+        <div id="search">
+            <button type="button" class="close" style="margin-top: 100px;">×</button>
+            <form>
+                <input type="search" value="" placeholder="type keyword(s) here" />
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+        
+		
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="js/vendor/bootstrap.js"></script>
 		<script src="js/vendor/jquery.easing.min.js"></script>
 		<script src="js/vendor/wow.js"></script>
         <!-- owl carousel js -->
 		<script src="js/vendor/owl.carousel.js"></script>
-        <!-- mouse scroll -->
-        <script src="js/vendor/mousescroll.js"></script>
-        <script src="js/vendor/smoothscroll.js"></script>
         
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
@@ -287,43 +380,25 @@
             new WOW().init();
         </script>
         
-        <!-- Script to handle scroll -->
+        <!-- Script to Activate owl carousel 
         <script>
-            // Navigation Scroll
-            $(window).scroll(function(event) {
-                Scroll();
-            });
+            $(document).ready(function() {
+ 
+              $(".product-showcase").owlCarousel({
 
-            $('.navbar-collapse ul li a').on('click', function() {  
-                $('html, body').animate({scrollTop: $(this.hash).offset().top - 5}, 1000);
-                return false;
-            });
+                  autoPlay: 3000, //Set AutoPlay to 3 seconds
 
-            // User define function
-            function Scroll() {
-                var contentTop      =   [];
-                var contentBottom   =   [];
-                var winTop      =   $(window).scrollTop();
-                var rangeTop    =   200;
-                var rangeBottom =   500;
-                $('.navbar-collapse').find('.scroll a').each(function(){
-                    contentTop.push( $( $(this).attr('href') ).offset().top);
-                    contentBottom.push( $( $(this).attr('href') ).offset().top + $( $(this).attr('href') ).height() );
-                })
-                $.each( contentTop, function(i){
-                    if ( winTop > contentTop[i] - rangeTop ){
-                        $('.navbar-collapse li.scroll')
-                        .removeClass('active')
-                        .eq(i).addClass('active');			
-                    }
-                })
-            };
+                  items : 5,
+                  dots : false,
+                  nav : false,
+                  itemsDesktop : [1199,3],
+                  itemsDesktopSmall : [979,3]
+                  
 
-            $('#tohash').on('click', function(){
-                $('html, body').animate({scrollTop: $(this.hash).offset().top - 5}, 1000);
-                return false;
+              });
+
             });
-        </script>
+        </script>-->
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

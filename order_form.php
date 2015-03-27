@@ -1,16 +1,41 @@
 <!doctype html>
+
+<?php 
+	// CACHE TEMPLATE
+	require_once("phpFastCache/phpfastcache.php");
+	
+	$cache = phpFastCache();
+	if ($cache->get("cart") == null) {
+		// DOING INITIALIZE CACHE
+		// THIS SHOULD BE CALLED ONCE AND ONLY ONCE
+		$cart = array(
+						"product" => array(),
+						"last-update" => time(),
+				);
+		$cache->set("cart", $cart, 100);
+	}
+	
+	// GET JSON DATA FROM CACHE
+	$json_cart = $cache->get("cart");
+	
+	echo json_encode($json_cart);
+	
+	$lastUpdate = $json_cart["last-update"];
+	$productLength = count($json_cart["product"]);
+?>
+
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>KEV-GARAGE</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=640px, initial-scale=.5, maximum-scale=.5" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="img/kesv%20kecil.png">
 
         <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" typ
+              e="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/full-slider.css">
         <link rel="stylesheet" type="text/css" href="css/hover.css">
@@ -19,11 +44,6 @@
         <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
         <link rel="stylesheet" type="text/css" href="css/owl.theme.css">
         <link rel="stylesheet" type="text/css" href="css/owl.transitions.css">
-        
-        <!--font-->
-        <link rel="stylesheet" type="text/css" href=""/>
-        
-        
         
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
@@ -132,7 +152,7 @@
                     </li>
                        <!-- Cart -->
                     <li>
-                        <a href="#" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge">4</span></a>
+                        <a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php $productLength;?></span></a>
 
                     </li>
                        <li>
@@ -153,280 +173,72 @@
             <!-- /.container -->
         </nav>
 
-        <!-- Full Page Image Background Carousel Header -->
-        <div class="container-fluid" style="height: 100%;">
-            <div id="myCarousel" class="row carousel slide">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-
-                <!-- Wrapper for Slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <!-- Set the first background image using inline CSS below. -->
-                        <div class="fill">
-                            <img src="img/slider/impp-1108-01-z+circuit-spec-tuned-coilovers+side-view.jpg" class="img-responsive" />
-                        </div>
-                        <div class="carousel-caption">
-                            <h2>Per</h2>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <!-- Set the second background image using inline CSS below. -->
-                        <div class="fill">
-                            <img src="img/slider/impp_1007_05_o+garrett+gt3071r_turbo.jpg" class="img-responsive" />
-                        </div>
-                        <div class="carousel-caption">
-                            <h2>Besi</h2>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <!-- Set the third background image using inline CSS below. -->
-                        <div class="fill">
-                            <img src="img/slider/lamborghini-twin-turbo-engine.jpg" class="img-responsive" />
-                        </div>
-                        <div class="carousel-caption">
-                            <h2>Mbem</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="icon-prev"></span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="icon-next"></span>
-                </a>
-
-            </div>
-        </div>
         
         
-        <!-- product -->
-        <div class="container-fluid">
+        <div class="container-fluid" style="margin-top: 110px">
             
-            <main class="container" role="main">
-                <section class="home-three-banner">
-                  <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
-                    <div class="col-xs-4 wow fadeInUp animated" style="visibility: visible" data-wow-delay="100ms">
-                        <a href="#" title="">
-                            <img id="product-item" src="img/banner/engine-sq-banner.png" class="img-responsive" alt="" />
-                            <!-- Caption -->
-                            <h4>
-                                <span id="product-caption">	
-                                    New Performance
-                                </span>
-                            </h4>
-
-                        </a>
-                    </div>
-                    <div class="col-xs-4 wow fadeInUp animated" data-wow-delay="300ms">
-                        <a href="#" title="">
-                            <img id="product-item" src="img/banner/handling-sq-banner.png" class="img-responsive" alt="" />
-                            <!-- Caption -->
-                            <h4>
-                                <span id="product-caption">	
-                                    Handling Support
-                                </span>
-                            </h4>
-
-                        </a>
-                    </div>
-                    <div class="col-xs-4 wow fadeInUp animated" data-wow-delay="500ms">
-                        <a href="#" title="">
-                            <img id="product-item" src="img/banner/kids-sq-banner.png" class="img-responsive" alt="" />
-                            <!-- Caption -->
-                            <h4>
-                                <span id="product-caption">	
-                                    Kids Electrical cars
-                                </span>
-                            </h4>
-
-                        </a>
-                    </div>
-                  </div>
-                </section>
-                
-            </main>
-        </div>
-            <!-- showcase -->
-            <div class="row wow fadeInUp animated" style="padding-left: 35px; padding-right: 35px;">
-                <div class="showcase-part"><h2>Featured Products</h2></div>
-                <div class="container">
-                    <div class="row row-centered product-showcase" style="margin-right: auto; margin-left: auto; ">
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/button/facebookfooterlogo.png" />
+                    <div class="col-md-6 col-md-offset-3" style="margin-bottom:15px">
+                        <div class="container-fluid forms">
+                            <!-- Product Name -->
+                            <div class="row">
+                                <center><strong><h1 class="col-centered">Form Delivery</h1></strong></center>
                             </div>
                             
-                            <div class="detail">
-                                Nama
+                            <!-- product form -->
+                            <form action="checkout.html" method="get">
+                            <div class="form-group">
+                              <label for="fname">First Name:</label>
+                              <input type="text" class="form-control" id="fname">
                             </div>
                             
-                            <div class="harga">
-                                Harga
+                            <div class="form-group">
+                              <label for="lname">Last Name:</label>
+                              <input type="text" class="form-control" id="lname">
                             </div>
+                            
+                            <div class="form-group">
+                              <label for="email">email:</label>
+                              <input type="text" class="form-control" id="email">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="confemail">Confirm Email:</label>
+                              <input type="text" class="form-control" id="confemail">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="nohp">No HP:</label>
+                              <input type="text" class="form-control" id="nohp">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="notelp">No Telepon:</label>
+                              <input type="text" class="form-control" id="notelp">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="address">Address:</label>
+                                <textarea type="text" row="30" cols="30" class="form-control" id="address"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="city">City:</label>
+                              <input type="text" class="form-control" id="city">
+                            </div>
+                            
+                            <div class="form-group">
+                              <label for="postalcode">Postal Code:</label>
+                              <input type="text" maxlength="5" class="form-control" id="postalcode">
+                            </div>
+                            
+                                <a href="checkout.html"><button type="submit" class="btn btn-default pull-right" style="margin-top:20px;">Next</button></a>
+                            </form>
                         </div>
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/button/facebookfooterlogo.png" />
-                            </div>
-                            
-                            <div class="detail">
-                                Nama
-                            </div>
-                            
-                            <div class="harga">
-                                Harga
-                            </div>
-                        </div>
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/button/facebookfooterlogo.png" />
-                            </div>
-                            
-                            <div class="detail">
-                                Nama
-                            </div>
-                            
-                            <div class="harga">
-                                Harga
-                            </div>
-                        </div>
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/button/facebookfooterlogo.png" />
-                            </div>
-                            
-                            <div class="detail">
-                                Nama
-                            </div>
-                            
-                            <div class="harga">
-                                Harga
-                            </div>
-                        </div>
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/button/facebookfooterlogo.png" />
-                            </div>
-                            
-                            <div class="detail">
-                                Nama
-                            </div>
-                            
-                            <div class="harga">
-                                Harga
-                            </div>
-                        </div>
-                        
                     </div>
                 </div>
-            </div>
-            <!-- showcase -->
-        
-          <!-- showcase -->
-            <div class="row wow fadeInUp animated" style="padding-left: 35px; padding-right: 35px;">
-                <div class="showcase-part"><h2>Latest Products</h2></div>
-                <div class="container">
-                    <div class="row row-centered product-showcase" style="margin-right: auto; margin-left: auto; ">
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/kesv%20kecil.png" />
-                            </div>
-                            
-                            <div class="detail">
-                                Nama
-                            </div>
-                            
-                            <div class="harga">
-                                Harga
-                            </div>
-                        </div>
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/kesv%20kecil.png" />
-                            </div>
-                            
-                            <div class="detail">
-                                Nama
-                            </div>
-                            
-                            <div class="harga">
-                                Harga
-                            </div>
-                        </div>
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/kesv%20kecil.png" />
-                            </div>
-                            
-                            <div class="detail">
-                                Nama
-                            </div>
-                            
-                            <div class="harga">
-                                Harga
-                            </div>
-                        </div>
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/kesv%20kecil.png" />
-                            </div>
-                            
-                            <div class="detail">
-                                Nama
-                            </div>
-                            
-                            <div class="harga">
-                                Harga
-                            </div>
-                        </div>
-                        <div class="col-md-2 item">
-                            <div class="thumbnail">
-                                <img src="img/kesv%20kecil.png" />
-                            </div>
-                            
-                            <div class="detail">
-                                Nama
-                            </div>
-                            
-                            <div class="harga">
-                                Harga
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <!--
-                    <div class="product-showcase">
-                        <div class="item" >
-                            <div class="img">
-                                <img src="img/kesv%20kecil.png" class="img-responsive"/>
-                            </div>
-                            <div class="detail">
-                                <h4>Jam Tangan</h4>
-                            </div>
-                        </div>
-                        <div class="item" ></div>
-                        <div class="item" ></div>
-                        <div class="item" ></div>
-                        <div class="item" ></div>
-                    </div>-->
-                </div>
-            </div>
-            <!-- showcase -->
-        <!-- product -->
-        
-        <!-- showcase -->
-        <div class="push"></div>
-        <!--</div>-->
         
         
-        <!--footer
+<!--footer
         <footer>-->
         
         <div class="footer">
@@ -486,6 +298,7 @@
         <!--</footer>-->        <!--</footer>-->
 
         
+        
         <!-- Full page search -->
         <div id="search">
             <button type="button" class="close" style="margin-top: 100px;">×</button>
@@ -494,14 +307,16 @@
                 <button type="submit" class="btn btn-primary">Search</button>
             </form>
         </div>
-		
         
+		
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script src="js/vendor/bootstrap.js"></script>
 		<script src="js/vendor/jquery.easing.min.js"></script>
 		<script src="js/vendor/wow.js"></script>
         <!-- owl carousel js -->
 		<script src="js/vendor/owl.carousel.js"></script>
+        <!-- elevate zoom -->
+        <script src="js/vendor/jquery.elevateZoom-3.0.8.min.js"></script>
         
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
@@ -520,27 +335,49 @@
             new WOW().init();
         </script>
         
-        <!-- Script to handle search -->
+        <!-- Script for elevate zoom -->
         <script>
-            $(function () {
-                $('a[href="#search"]').on('click', function(event) {
-                    event.preventDefault();
-                    $('#search').addClass('open');
-                    $('#search > form > input[type="search"]').focus();
-                });
+            //initiate the plugin and pass the id of the div containing gallery images 
+            $("#product_image").elevateZoom({
+                zoomType: "inner",
+                zoomWindowFadeIn: 500,
+                zoomWindowFadeOut: 750,
+                gallery:'product_gallery', 
+                cursor: 'crosshair', 
+                galleryActiveClass: 'active', 
+                imageCrossfade: true, 
+                lensFadeIn: 500, 
+                loadingIcon: 'http://www.elevateweb.co.uk/spinner.gif'}); 
+            //pass the images to Fancybox 
+            $("#product_image").bind("click", function(e) { 
+                var ez = $('#product_image').data('elevateZoom');	
+            $.fancybox(ez.getGalleryList()); return false; });
+        </script>
+        
+        <!-- Script to Activate owl carousel -->
+        <script>
+            $(document).ready(function() {
+ 
+              $("#related-product").owlCarousel({
 
-                $('#search, #search button.close').on('click keyup', function(event) {
-                    if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-                        $(this).removeClass('open');
-                    }
-                });
+                  autoPlay: 3000, //Set AutoPlay to 3 seconds
 
-                $('form').submit(function(event) {
-                    event.preventDefault();
-                    return false;
-                })
+                  items : 5,
+                  stagePadding : 50,
+                  loop : true,
+                  dots : false,
+                  nav : false,
+                  itemsDesktop : [1199,3],
+                  itemsDesktopSmall : [979,3]
+                  
+
+              });
+
             });
         </script>
+        
+        <!-- Script to handle search -->
+        
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

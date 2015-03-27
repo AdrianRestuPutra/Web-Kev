@@ -1,4 +1,29 @@
 <!doctype html>
+
+<?php 
+	// CACHE TEMPLATE
+	require_once("phpFastCache/phpfastcache.php");
+	
+	$cache = phpFastCache();
+	if ($cache->get("cart") == null) {
+		// DOING INITIALIZE CACHE
+		// THIS SHOULD BE CALLED ONCE AND ONLY ONCE
+		$cart = array(
+						"product" => array(),
+						"last-update" => time(),
+				);
+		$cache->set("cart", $cart, 100);
+	}
+	
+	// GET JSON DATA FROM CACHE
+	$json_cart = $cache->get("cart");
+	
+	echo json_encode($json_cart);
+	
+	$lastUpdate = $json_cart["last-update"];
+	$productLength = count($json_cart["product"]);
+?>
+
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
@@ -127,7 +152,7 @@
                     </li>
                        <!-- Cart -->
                     <li>
-                        <a href="#" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge">4</span></a>
+                        <a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>
 
                     </li>
                        <li>
@@ -156,21 +181,28 @@
             <div class="container">
                 <div class="row">
                     <div class="row col-md-8 col-md-offset-2 panel panel-default" style="margin-top: 50px; margin-bottom:50px;">
-                        
-                        <div class="row">
-                            <div class="col-md-1" style="margin-top:15px; margin-left:20px;">
-                                <img class="thumbnail" height="25px" width="25px" src="img/button/twitterfooterlogo.png">
-                            </div>
-                            
-                            <div class="col-md-10 panel panel-default" style="margin:15px 0px 0px 15px; height:25px; color:#fff; padding: 5px 10px;">
-                                <div class="col-md-8">
-                                    Keterangan belanja
-                                </div>
-                                <div class="col-md-4">
-                                    <span class="pull-right">IDR 1.000</span>
-                                </div>
-                            </div>
-                        </div>
+							<!-- DISINI STRUKNYA -->
+							<?php
+								for($i=0;$i<count($json_cart["product"]);$i++) {
+									$url = "http://192.168.1.108/kevgarage/index.php?r=api/ProductDetail&idProduct=".$json_cart["product"][$i]["idProduct"];
+									$json_get = json_decode(file_get_contents($url));
+									?>
+									<div class="row">
+										<div class="col-md-1" style="margin-top:15px; margin-left:20px;">
+											<img class="thumbnail" height="25px" width="25px" src="img/button/twitterfooterlogo.png">
+										</div>
+										<div class="col-md-10 panel panel-default" style="margin:15px 0px 0px 15px; height:25px; color:#fff; padding: 5px 10px;">
+											<div class="col-md-8">
+												<?php echo $json_get->nameProduct;?> (<?php echo $json_cart["product"][$i]["qty"]?>)
+											</div>
+											<div class="col-md-4">
+												<span class="pull-right">IDR <?php echo $json_get->price;?></span>
+											</div>
+										</div>
+									</div>
+									<?php
+								}
+							?>
                             
                         <div class="row">
                             <span class="pull-right" style="margin: 0px 30px 10px 10px; color: #fff; font-size: 16px;">Total Harga : IDR 100.000.000.000</span>
