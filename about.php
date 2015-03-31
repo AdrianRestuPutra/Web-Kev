@@ -12,7 +12,7 @@
 						"product" => array(),
 						"last-update" => time(),
 				);
-		$cache->set("cart", $cart, 100);
+		$cache->set("cart", $cart);
 	}
 	
 	// GET JSON DATA FROM CACHE
@@ -55,7 +55,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-			<!--<div class="wrapper">-->
+		<!--<div class="wrapper">-->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -66,7 +66,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand img-responsive" href="#">
+                    <a class="navbar-brand img-responsive" href="index.php">
                             <img src="img/kesv%20kecil.png" id="logo-resize">
                     </a>
                 </div>
@@ -74,101 +74,97 @@
                 <div class="collapse navbar-collapse" id="custom-navbar">
                     
                    <ul class="nav navbar-nav navbar-right">
-                       
+                       <!-- Search -->
+                   
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Find The Best Item Just for You">SHOP <b class="caret"></b></a>
-                        <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333">
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">FEATURED</a>
+                        <ul class="dropdown-menu" style="background-color: #333">
+                           
+                            <li class="dropdownsheader" style="padding-left:20px; color: #fff;">
+                                MOTORSPORT
                             </li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">MOST POPULAR</a>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=1&nameProduct=" style="color: #fff;">Engine</a>
                             </li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">MOST RECENT</a>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=2&nameProduct=" style="color: #fff;">Handling</a>
+                            </li>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=3&nameProduct=" style="color: #fff;">Accessories</a>
+                            </li>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=4&nameProduct=" style="color: #fff;">Rims</a>
                             </li>
                             <li class="divider"></li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">MOTORSPORT</a>
+                            <li class="dropdownsheader" style="padding-left:20px; color: #fff;">
+                                SERVICE
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Engine</a>
+                                <a href="service.php#fullbodysticker" style="color: #fff;">Full Body Sticker</a>
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Handling</a>
+                                <a href="service.php#turboinstalation" style="color: #fff;">Turbo Instalation</a>
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Accessories</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Rims</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">SERVICE</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Full Body Sticker</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Turbo Instalation</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Car Consultation</a>
+                                <a href="service.php#carconsultation" style="color: #fff;">Car Consultation</a>
                             </li>
                             <li class="divider"></li>
                              <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">KIDS E-CARS</a>
+                                <a href="showcase_item.php?idCategory=5&nameProduct=" style="color: #fff;">KIDS E-CARS</a>
                             </li>
                              <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">CLOTHES</a>
+                                <a href="showcase_item.php?idCategory=6&nameProduct=" style="color: #fff;">CLOTHES</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#" title="One Person Junk is Another Person Treasure">USED</a>
+                        <a href="showcase_item.php?idCategory=7&nameProduct=" title="One Person Junk is Another Person Treasure">USED</a>
                     </li>
                     <li>
                         <a href="#" title="Find Latest News and Info about Kevgarage's Event">BLOG</a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="FAQ and Other Information">ABOUT <b class="caret"></b></a>
-                        <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333;">
+                        <ul class="dropdown-menu" style="background-color: #333;">
 
                             <li class="dropdownsheader">
-                                <a href="#contact" style="color: #fff;">CONTACT</a>
+                                <a href="about.php#contact" style="color: #fff;">CONTACT</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#faq" style="color: #fff;">FAQ</a>
+                                <a href="about.php#faq" style="color: #fff;">FAQ</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#termscondition" style="color: #fff;">TERMS &amp; CONDITION</a>
+                                <a href="about.php#termcondition" style="color: #fff;">TERMS &amp; CONDITION</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#storepolicy" style="color: #fff;">STORE POLICY</a>
+                                <a href="about.php#storepolicy" style="color: #fff;">STORE POLICY</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#shippingdelivery" style="color: #fff;">SHIPPING &amp; DELIVERY</a>
+                                <a href="about.php#shippingdelivery" style="color: #fff;">SHIPPING &amp; DELIVERY</a>
                             </li>
                         </ul>
                     </li>
                        <!-- Cart -->
                     <li>
-                        <a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>
-
+					<?php 
+						if($productLength==0){
+					?>
+						<a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>                      
+						<?php } else if ($productLength!=0){  ?>
+						<a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>
+					<?php }
+					?>
                     </li>
-                       
-                   <!-- Search -->
-                    <li>
-                        <form id="search_box" name="search_box" class="navbar-form" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search" name="q">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit" style="background-color: #222"><i class="glyphicon glyphicon-search"></i></button>
+                       <li>
+                            <form id="search_box" name="search_box" class="navbar-form" role="search" method="GET" action="showcase_item.php">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" name="nameProduct">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default" type="submit" style="background-color: #222"><i class="glyphicon glyphicon-search"></i></button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                   </li>
+                            </form>
+                       </li>
                 </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -176,9 +172,8 @@
 
             <!-- /.container -->
         </nav>
-
         
-        
+		<div>
         <!-- Section Contact -->
         <section id="contact" class="section-about-odd">
             <div class="container">
@@ -243,7 +238,8 @@
                 </div>
             </div>
         </section>
-        
+        </div>
+		
         <div class="push" style="background-color: #444"></div>
         
         <!-- footer -->

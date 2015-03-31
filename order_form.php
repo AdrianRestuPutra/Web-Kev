@@ -12,7 +12,7 @@
 						"product" => array(),
 						"last-update" => time(),
 				);
-		$cache->set("cart", $cart, 100);
+		$cache->set("cart", $cart);
 	}
 	
 	// GET JSON DATA FROM CACHE
@@ -34,8 +34,7 @@
         <link rel="apple-touch-icon" href="img/kesv%20kecil.png">
 
         <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
-        <link rel="stylesheet" typ
-              e="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/full-slider.css">
         <link rel="stylesheet" type="text/css" href="css/hover.css">
@@ -46,6 +45,46 @@
         <link rel="stylesheet" type="text/css" href="css/owl.transitions.css">
         
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+		<script type="text/javascript">
+			function confirmEmail() {
+				var email = document.getElementById("email").value
+				var confemail = document.getElementById("confemail").value
+				if(email != confemail) {
+					alert('Email Not Matching!');
+				}
+			}
+		</script>
+		<script>
+			function myFunction() {
+				var str = document.getElementById("postalCode").value
+				var n = str.length;
+				document.getElementById("postalCode").innerHTML = n;
+				if(n != 5) {
+					alert('Postal Code Must be numeric and 5!');
+				}
+			}
+			
+			function emailvalidation(entered, alertbox)
+				{
+					with (entered)
+					{
+						apos=value.indexOf("@"); 
+						dotpos=value.lastIndexOf(".");
+						lastpos=value.length-1;
+						if (apos<1 || dotpos-apos<2 || lastpos-dotpos>3 || lastpos-dotpos<2) 
+						{if (alertbox) {alert(alertbox);} return false;}
+						else {return true;}
+					}
+				} 
+				
+			function valid(f) {
+				var re = /^[\d]*$/;
+				if (!re.test(f.value)) {
+				alert("Only numbers are allowed");
+				f.value = f.value.replace(/[^\d]/g,"");
+				}
+			} 
+		</script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -63,7 +102,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand img-responsive" href="#">
+                    <a class="navbar-brand img-responsive" href="index.php">
                             <img src="img/kesv%20kecil.png" id="logo-resize">
                     </a>
                 </div>
@@ -76,55 +115,46 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Find The Best Item Just for You">SHOP <b class="caret"></b></a>
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333">
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">FEATURED</a>
+                           
+                            <li class="dropdownsheader" style="padding-left:20px; color: #fff;">
+                                MOTORSPORT
                             </li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">MOST POPULAR</a>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=1&nameProduct=" style="color: #fff;">Engine</a>
                             </li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">MOST RECENT</a>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=2&nameProduct=" style="color: #fff;">Handling</a>
+                            </li>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=3&nameProduct=" style="color: #fff;">Accessories</a>
+                            </li>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=4&nameProduct=" style="color: #fff;">Rims</a>
                             </li>
                             <li class="divider"></li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">MOTORSPORT</a>
+                            <li class="dropdownsheader" style="padding-left:20px; color: #fff;">
+                                SERVICE
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Engine</a>
+                                <a href="service.php#fullbodysticker" style="color: #fff;">Full Body Sticker</a>
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Handling</a>
+                                <a href="service.php#turboinstalation" style="color: #fff;">Turbo Instalation</a>
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Accessories</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Rims</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">SERVICE</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Full Body Sticker</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Turbo Instalation</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Car Consultation</a>
+                                <a href="service.php#carconsultation" style="color: #fff;">Car Consultation</a>
                             </li>
                             <li class="divider"></li>
                              <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">KIDS E-CARS</a>
+                                <a href="showcase_item.php?idCategory=5&nameProduct=" style="color: #fff;">KIDS E-CARS</a>
                             </li>
                              <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">CLOTHES</a>
+                                <a href="showcase_item.php?idCategory=6&nameProduct=" style="color: #fff;">CLOTHES</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#" title="One Person Junk is Another Person Treasure">USED</a>
+                        <a href="showcase_item.php?idCategory=7&nameProduct=" title="One Person Junk is Another Person Treasure">USED</a>
                     </li>
                     <li>
                         <a href="#" title="Find Latest News and Info about Kevgarage's Event">BLOG</a>
@@ -134,31 +164,36 @@
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333;">
 
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">CONTACT</a>
+                                <a href="about.php#contact" style="color: #fff;">CONTACT</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">FAQ</a>
+                                <a href="about.php#faq" style="color: #fff;">FAQ</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">TERMS &amp; CONDITION</a>
+                                <a href="about.php#termcondition" style="color: #fff;">TERMS &amp; CONDITION</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">STORE POLICY</a>
+                                <a href="about.php#storepolicy" style="color: #fff;">STORE POLICY</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">SHIPPING &amp; DELIVERY</a>
+                                <a href="about.php#shippingdelivery" style="color: #fff;">SHIPPING &amp; DELIVERY</a>
                             </li>
                         </ul>
                     </li>
                        <!-- Cart -->
                     <li>
-                        <a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php $productLength;?></span></a>
-
+					<?php 
+						if($productLength==0){
+					?>
+						<a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>                      
+						<?php } if($productLength!=0){  ?>
+						<a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>
+					<?php }?>
                     </li>
                        <li>
-                            <form id="search_box" name="search_box" class="navbar-form" role="search">
+                            <form id="search_box" name="search_box" class="navbar-form" role="search" method="GET" action="showcase_item.php">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search" name="q">
+                                    <input type="text" class="form-control" placeholder="Search" name="nameProduct">
                                     <div class="input-group-btn">
                                         <button class="btn btn-default" type="submit" style="background-color: #222"><i class="glyphicon glyphicon-search"></i></button>
                                     </div>
@@ -172,8 +207,6 @@
 
             <!-- /.container -->
         </nav>
-
-        
         
         <div class="container-fluid" style="margin-top: 110px">
             
@@ -185,53 +218,52 @@
                             </div>
                             
                             <!-- product form -->
-                            <form action="checkout.html" method="get">
+                            <form action="checkout.php" method="post" onsubmit="emailvalidate()">
                             <div class="form-group">
                               <label for="fname">First Name:</label>
-                              <input type="text" class="form-control" id="fname">
+                              <input type="text" required="1" class="form-control" id="fname" name="fname" placeholder="Type your first name here">
                             </div>
                             
                             <div class="form-group">
                               <label for="lname">Last Name:</label>
-                              <input type="text" class="form-control" id="lname">
+                              <input type="text" required="1" class="form-control" id="lname" name="lname" placeholder="Type your last name here">
                             </div>
                             
                             <div class="form-group">
                               <label for="email">email:</label>
-                              <input type="text" class="form-control" id="email">
+                              <input type="text" required="1" class="form-control" id="email" name="email" onchange="emailvalidation(this,'The E-mail is not valid');" placeholder="Type your email here">
                             </div>
                             
                             <div class="form-group">
                               <label for="confemail">Confirm Email:</label>
-                              <input type="text" class="form-control" id="confemail">
+                              <input type="text" required="1" class="form-control" id="confemail" name="confemail" onblur="confirmEmail()" placeholder="Type your confirm email here">
                             </div>
                             
                             <div class="form-group">
                               <label for="nohp">No HP:</label>
-                              <input type="text" class="form-control" id="nohp">
+                              <input type="text" required="1" class="form-control" id="nohp" name="noHp" onkeyup="valid(this)" placeholder="Type your no HP here">
                             </div>
                             
                             <div class="form-group">
                               <label for="notelp">No Telepon:</label>
-                              <input type="text" class="form-control" id="notelp">
+                              <input type="text" required="1" class="form-control" id="notelp" name="noTlp" onkeyup="valid(this)" placeholder="Type your no telepon here">
                             </div>
                             
                             <div class="form-group">
                               <label for="address">Address:</label>
-                                <textarea type="text" row="30" cols="30" class="form-control" id="address"></textarea>
+                                <textarea type="text" required="1" rows="5" cols="30" class="form-control" id="address" name="address" placeholder="Type your address here"></textarea>
                             </div>
                             
                             <div class="form-group">
                               <label for="city">City:</label>
-                              <input type="text" class="form-control" id="city">
+                              <input type="text" required="1" class="form-control" id="city" name="city" placeholder="Type your city here">
                             </div>
                             
                             <div class="form-group">
                               <label for="postalcode">Postal Code:</label>
-                              <input type="text" maxlength="5" class="form-control" id="postalcode">
-                            </div>
-                            
-                                <a href="checkout.html"><button type="submit" class="btn btn-default pull-right" style="margin-top:20px;">Next</button></a>
+                              <input type="text" required="1" maxlength="5" class="form-control" id="postalCode" name="postalCode" onkeyup="myFunction()" placeholder="Type your postal code here">
+                            </div>                            
+                                <button type="submit" class="btn btn-default pull-right" style="margin-top:20px;">Next</button>
                             </form>
                         </div>
                     </div>

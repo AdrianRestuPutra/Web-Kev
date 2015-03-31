@@ -12,7 +12,7 @@
 						"product" => array(),
 						"last-update" => time(),
 				);
-		$cache->set("cart", $cart, 100);
+		$cache->set("cart", $cart);
 	}
 	
 	// GET JSON DATA FROM CACHE
@@ -26,7 +26,7 @@
 
 <?php
 	// API TEMPLATE PRODUCT
-	$url = "http://192.168.1.108/kevgarage/index.php?r=api/ProductDetail&idProduct=";
+	$url = "http://localhost/kevgarage/index.php?r=api/ProductDetail&idProduct=";
 	
 	$idProduct = 0;
 	$nameProduct = "";
@@ -75,7 +75,7 @@
 		
 		$productLength++;
 		
-		$cache->set("cart", $json_cart, 100);
+		$cache->set("cart", $json_cart);
 	}
 ?>
 
@@ -117,7 +117,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand img-responsive" href="#">
+                    <a class="navbar-brand img-responsive" href="index.php">
                             <img src="img/kesv%20kecil.png" id="logo-resize">
                     </a>
                 </div>
@@ -130,55 +130,46 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Find The Best Item Just for You">SHOP <b class="caret"></b></a>
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333">
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">FEATURED</a>
+                           
+                            <li class="dropdownsheader" style="padding-left:20px; color: #fff;">
+                                MOTORSPORT
                             </li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">MOST POPULAR</a>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=1&nameProduct=" style="color: #fff;">Engine</a>
                             </li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">MOST RECENT</a>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=2&nameProduct=" style="color: #fff;">Handling</a>
+                            </li>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=3&nameProduct=" style="color: #fff;">Accessories</a>
+                            </li>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=4&nameProduct=" style="color: #fff;">Rims</a>
                             </li>
                             <li class="divider"></li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">MOTORSPORT</a>
+                            <li class="dropdownsheader" style="padding-left:20px; color: #fff;">
+                                SERVICE
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Engine</a>
+                                <a href="service.php#fullbodysticker" style="color: #fff;">Full Body Sticker</a>
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Handling</a>
+                                <a href="service.php#turboinstalation" style="color: #fff;">Turbo Instalation</a>
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Accessories</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Rims</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">SERVICE</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Full Body Sticker</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Turbo Instalation</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Car Consultation</a>
+                                <a href="service.php#carconsultation" style="color: #fff;">Car Consultation</a>
                             </li>
                             <li class="divider"></li>
                              <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">KIDS E-CARS</a>
+                                <a href="showcase_item.php?idCategory=5&nameProduct=" style="color: #fff;">KIDS E-CARS</a>
                             </li>
                              <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">CLOTHES</a>
+                                <a href="showcase_item.php?idCategory=6&nameProduct=" style="color: #fff;">CLOTHES</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#" title="One Person Junk is Another Person Treasure">USED</a>
+                        <a href="showcase_item.php?idCategory=7&nameProduct=" title="One Person Junk is Another Person Treasure">USED</a>
                     </li>
                     <li>
                         <a href="#" title="Find Latest News and Info about Kevgarage's Event">BLOG</a>
@@ -188,31 +179,36 @@
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333;">
 
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">CONTACT</a>
+                                <a href="about.php#contact" style="color: #fff;">CONTACT</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">FAQ</a>
+                                <a href="about.php#faq" style="color: #fff;">FAQ</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">TERMS &amp; CONDITION</a>
+                                <a href="about.php#termcondition" style="color: #fff;">TERMS &amp; CONDITION</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">STORE POLICY</a>
+                                <a href="about.php#storepolicy" style="color: #fff;">STORE POLICY</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">SHIPPING &amp; DELIVERY</a>
+                                <a href="about.php#shippingdelivery" style="color: #fff;">SHIPPING &amp; DELIVERY</a>
                             </li>
                         </ul>
                     </li>
                        <!-- Cart -->
                     <li>
-                        <a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>
-
+					<?php 
+						if($productLength==0){
+					?>
+						<a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>                      
+						<?php } if($productLength!=0){  ?>
+						<a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>
+					<?php }?>
                     </li>
                        <li>
-                            <form id="search_box" name="search_box" class="navbar-form" role="search">
+                            <form id="search_box" name="search_box" class="navbar-form" role="search" method="GET" action="showcase_item.php">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search" name="q">
+                                    <input type="text" class="form-control" placeholder="Search" name="nameProduct">
                                     <div class="input-group-btn">
                                         <button class="btn btn-default" type="submit" style="background-color: #222"><i class="glyphicon glyphicon-search"></i></button>
                                     </div>
@@ -233,19 +229,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5">
-                        <img id="product_image" src="img/small/image1.png" data-zoom-image="img/large/image1.jpg"/> 
-                        <div id="product_gallery"> 
-                            <a href="#" data-image="img/small/image1.png" data-zoom-image="img/large/image1.jpg"> 
-                                <img id="product_image" src="img/thumb/image1.jpg" /> 
+                        <img id="product_image" width="411px" height="274px" src="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName1.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName1.'&w=1280&h=854';?>"/> 
+                        <div id="product_gallery" > 
+                            <a href="#" width="411px" height="274px" data-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName1.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName1.'&w=1280&h=854';?>"> 
+                                <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName1.'&w=100&h=67';?>" /> 
                             </a> 
-                            <a href="#" data-image="img/small/image2.png" data-zoom-image="img/large/image2.jpg"> 
-                                <img id="product_image" src="img/thumb/image2.jpg" /> 
+                            <a href="#" data-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName2.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName2.'&w=1280&h=854';?>"> 
+                                <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName2.'&w=100&h=67';?>" /> 
                             </a> 
-                            <a href="#" data-image="img/small/image3.png" data-zoom-image="img/large/image3.jpg"> 
-                                <img id="product_image" src="img/thumb/image3.jpg" /> 
+                            <a href="#" data-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName3.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName3.'&w=1280&h=854';?>"> 
+                                <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName3.'&w=100&h=67';?>" /> 
                             </a>
-                            <a href="#" data-image="img/small/image4.png" data-zoom-image="img/large/image4.jpg"> 
-                                <img id="product_image" src="img/thumb/image4.jpg" /> 
+                            <a href="#" data-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName4.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName4.'&w=1280&h=854';?>"> 
+                                <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName4.'&w=100&h=67';?>" /> 
                             </a>
                         </div>
                     </div>
@@ -264,7 +260,7 @@
                             <div class="row product-description-list">
                                 <h3>Description List</h3>
                                 <ul>
-                                    <li>desc 1</li>
+                                    <li><?php echo $descriptionList?></li>
                                     <li>desc 1</li>
                                     <li>desc 1</li>
                                 </ul>
@@ -301,79 +297,31 @@
                 <div class="row" style="margin-top: 20px;">
                     <h3>Related Product</h3>
                     <div id="related-product" class="owl-carousel owl-theme">
+						<?php $related = "http://localhost/kevgarage/index.php?r=api/RelatedProduct&idCategory=";
+							
+							$idProduct = 0;
+							$nameProduct = "";
+							$idCategory = $json->idCategory;
+							$json_get_related = json_decode(file_get_contents($related.$idCategory));
+							for($i=0;$i<count($json_get_related);$i++){
+								
+								
+						?>
                         <!-- Gambar yg dimasukkan ukuran 300x250 -->
-                      <div class="item">
-                          <div class="smaller-thumbnail">
-                                <img src="img/banner/engine-sq-banner.png" />
-                            </div>
-                            <div class="details">
-                                Nama
-                            </div>
-                            <div class="price">
-                                Harga
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="smaller-thumbnail">
-                                <img src="img/banner/engine-sq-banner.png" />
-                            </div>
-                            <div class="details">
-                                Nama
-                            </div>
-                            <div class="price">
-                                Harga
-                            </div>
-                        </div>
-                      <div class="item"> 
-                          <div class="smaller-thumbnail">
-                                <img src="img/banner/handling-sq-banner.png" />
-                            </div>
-                            <div class="details">
-                                Nama
-                            </div>
-                            <div class="price">
-                                Harga
-                            </div>
-                        </div>
-                        <div class="item"> 
-                          <div class="smaller-thumbnail">
-                                <img src="img/banner/handling-sq-banner.png" />
-                            </div>
-                            <div class="details">
-                                Nama
-                            </div>
-                            <div class="price">
-                                Harga
-                            </div>
-                        </div>
-                           <div class="item"> 
-                          <div class="smaller-thumbnail">
-                                <img src="img/banner/handling-sq-banner.png" />
-                            </div>
-                            <div class="details">
-                                Nama
-                            </div>
-                            <div class="price">
-                                Harga
-                            </div>
-                        </div>
-                           <div class="item"> 
-                          <div class="smaller-thumbnail">
-                                <img src="img/banner/handling-sq-banner.png" />
-                            </div>
-                            <div class="details">
-                                Nama
-                            </div>
-                            <div class="price">
-                                Harga
-                            </div>
-                        </div>
-                      <div class="item"><h1>5</h1></div>
-                      <div class="item"><h1>6</h1></div>
-                      <div class="item"><h1>7</h1></div>
-                      <div class="item"><h1>8</h1></div>
-                      <div class="item"><h1>9</h1></div>
-                      <div class="item"><h1>10</h1></div>
+						<a href="product_detail.php?idProduct=<?php echo $json_get_related[$i]->idProduct?>">
+							<div class="item">
+								<div class="smaller-thumbnail">
+									<img src="<?php echo 'http://localhost/kevgarage/images/products/'.$json_get_related[$i]->imageName1;?>" />
+								</div>
+								<div class="details">
+									<?php echo $json_get_related[$i]->nameProduct ?>
+								</div>
+								<div class="price">
+									<?php echo $json_get_related[$i]->price ?>
+								</div>
+							</div>		
+						</a>
+						<?php }?>
                     </div>
                 </div>
             </div>

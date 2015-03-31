@@ -5,6 +5,15 @@
 	require_once("phpFastCache/phpfastcache.php");
 	
 	$cache = phpFastCache();
+	
+	if (isset($_GET["remove"])) {
+		// Delete from cache
+		$cache->delete("cart");
+
+		// Clean up all cache
+		$cache->clean();
+	}
+	
 	if ($cache->get("cart") == null) {
 		// DOING INITIALIZE CACHE
 		// THIS SHOULD BE CALLED ONCE AND ONLY ONCE
@@ -12,7 +21,7 @@
 						"product" => array(),
 						"last-update" => time(),
 				);
-		$cache->set("cart", $cart, 100);
+		$cache->set("cart", $cart);
 	}
 	
 	// GET JSON DATA FROM CACHE
@@ -34,8 +43,7 @@
         <link rel="apple-touch-icon" href="img/kesv%20kecil.png">
 
         <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
-        <link rel="stylesheet" typ
-              e="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="css/full-slider.css">
         <link rel="stylesheet" type="text/css" href="css/hover.css">
@@ -52,7 +60,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-			<!--<div class="wrapper">-->
+		<!--<div class="wrapper">-->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -63,7 +71,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand img-responsive" href="#">
+                    <a class="navbar-brand img-responsive" href="index.php">
                             <img src="img/kesv%20kecil.png" id="logo-resize">
                     </a>
                 </div>
@@ -76,55 +84,46 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Find The Best Item Just for You">SHOP <b class="caret"></b></a>
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333">
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">FEATURED</a>
+                           
+                            <li class="dropdownsheader" style="padding-left:20px; color: #fff;">
+                                MOTORSPORT
                             </li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">MOST POPULAR</a>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=1&nameProduct=" style="color: #fff;">Engine</a>
                             </li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">MOST RECENT</a>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=2&nameProduct=" style="color: #fff;">Handling</a>
+                            </li>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=3&nameProduct=" style="color: #fff;">Accessories</a>
+                            </li>
+                            <li class="dropdowns">
+                                <a href="showcase_item.php?idCategory=4&nameProduct=" style="color: #fff;">Rims</a>
                             </li>
                             <li class="divider"></li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">MOTORSPORT</a>
+                            <li class="dropdownsheader" style="padding-left:20px; color: #fff;">
+                                SERVICE
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Engine</a>
+                                <a href="service.php#fullbodysticker" style="color: #fff;">Full Body Sticker</a>
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Handling</a>
+                                <a href="service.php#turboinstalation" style="color: #fff;">Turbo Instalation</a>
                             </li>
                             <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Accessories</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Rims</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">SERVICE</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Full Body Sticker</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Turbo Instalation</a>
-                            </li>
-                            <li class="dropdowns">
-                                <a href="#" style="color: #fff;">Car Consultation</a>
+                                <a href="service.php#carconsultation" style="color: #fff;">Car Consultation</a>
                             </li>
                             <li class="divider"></li>
                              <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">KIDS E-CARS</a>
+                                <a href="showcase_item.php?idCategory=5&nameProduct=" style="color: #fff;">KIDS E-CARS</a>
                             </li>
                              <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">CLOTHES</a>
+                                <a href="showcase_item.php?idCategory=6&nameProduct=" style="color: #fff;">CLOTHES</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#" title="One Person Junk is Another Person Treasure">USED</a>
+                        <a href="showcase_item.php?idCategory=7&nameProduct=" title="One Person Junk is Another Person Treasure">USED</a>
                     </li>
                     <li>
                         <a href="#" title="Find Latest News and Info about Kevgarage's Event">BLOG</a>
@@ -134,31 +133,36 @@
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333;">
 
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">CONTACT</a>
+                                <a href="about.php#contact" style="color: #fff;">CONTACT</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">FAQ</a>
+                                <a href="about.php#faq" style="color: #fff;">FAQ</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">TERMS &amp; CONDITION</a>
+                                <a href="about.php#termcondition" style="color: #fff;">TERMS &amp; CONDITION</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">STORE POLICY</a>
+                                <a href="about.php#storepolicy" style="color: #fff;">STORE POLICY</a>
                             </li>
                             <li class="dropdownsheader">
-                                <a href="#" style="color: #fff;">SHIPPING &amp; DELIVERY</a>
+                                <a href="about.php#shippingdelivery" style="color: #fff;">SHIPPING &amp; DELIVERY</a>
                             </li>
                         </ul>
                     </li>
                        <!-- Cart -->
                     <li>
-                        <a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>
-
+					<?php 
+						if($productLength==0){
+					?>
+						<a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>                      
+						<?php } if($productLength!=0){  ?>
+						<a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>
+					<?php }?>
                     </li>
                        <li>
-                            <form id="search_box" name="search_box" class="navbar-form" role="search">
+                            <form id="search_box" name="search_box" class="navbar-form" role="search" method="GET" action="showcase_item.php">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search" name="q">
+                                    <input type="text" class="form-control" placeholder="Search" name="nameProduct">
                                     <div class="input-group-btn">
                                         <button class="btn btn-default" type="submit" style="background-color: #222"><i class="glyphicon glyphicon-search"></i></button>
                                     </div>
@@ -172,8 +176,6 @@
 
             <!-- /.container -->
         </nav>
-
-        
         
         <div class="container-fluid" style="margin-top: 110px">
             
@@ -183,20 +185,21 @@
                     <div class="row col-md-8 col-md-offset-2 panel panel-default" style="margin-top: 50px; margin-bottom:50px;">
 							<!-- DISINI STRUKNYA -->
 							<?php
+								$totalHarga = 0;
 								for($i=0;$i<count($json_cart["product"]);$i++) {
-									$url = "http://192.168.1.108/kevgarage/index.php?r=api/ProductDetail&idProduct=".$json_cart["product"][$i]["idProduct"];
+									$url = "http://localhost/kevgarage/index.php?r=api/ProductDetail&idProduct=".$json_cart["product"][$i]["idProduct"];
 									$json_get = json_decode(file_get_contents($url));
 									?>
 									<div class="row">
 										<div class="col-md-1" style="margin-top:15px; margin-left:20px;">
-											<img class="thumbnail" height="25px" width="25px" src="img/button/twitterfooterlogo.png">
+											<img class="thumbnail" height="25px" width="25px" src="<?php echo 'http://localhost/kevgarage/images/products/'.$json_get->imageName1;?>">
 										</div>
 										<div class="col-md-10 panel panel-default" style="margin:15px 0px 0px 15px; height:25px; color:#fff; padding: 5px 10px;">
 											<div class="col-md-8">
 												<?php echo $json_get->nameProduct;?> (<?php echo $json_cart["product"][$i]["qty"]?>)
 											</div>
 											<div class="col-md-4">
-												<span class="pull-right">IDR <?php echo $json_get->price;?></span>
+												<span class="pull-right">IDR <?php echo $json_get->price; $totalHarga += $json_get->price * $json_cart["product"][$i]["qty"];?></span>
 											</div>
 										</div>
 									</div>
@@ -205,12 +208,13 @@
 							?>
                             
                         <div class="row">
-                            <span class="pull-right" style="margin: 0px 30px 10px 10px; color: #fff; font-size: 16px;">Total Harga : IDR 100.000.000.000</span>
+                            <span class="pull-right" style="margin: 0px 30px 10px 10px; color: #fff; font-size: 16px;">Total Harga : IDR <?php echo $totalHarga;?></span>
                         </div>
                     
                         <div class="row" style="margin: 2px 15px 15px;">
-                            <a href="order_form.html"> <button type="submit" class="btn btn-default pull-right" style="margin-left: 15px;">Next</button></a>
-                            <a href="index.html"><button type="submit" class="btn btn-default pull-right">Continue Shopping</button></a>
+                            <a href="order_form.php"> <button type="submit" class="btn btn-default pull-right" style="margin-left: 15px;">Next</button></a>
+                            <a href="index.php"><button type="submit" class="btn btn-default pull-right" style="margin-left: 15px;">Continue Shopping</button></a>
+							<a href="cart.php?remove=true"><button type="submit" class="btn btn-default pull-right">Remove Cart</button></a>
                         </div>
                     </div>
                     
