@@ -209,28 +209,28 @@
                     <div class="item active">
                         <!-- Set the first background image using inline CSS below. -->
                         <div class="fill">
-                            <img src="img/slider/impp-1108-01-z+circuit-spec-tuned-coilovers+side-view.jpg" class="img-responsive" />
+                            <img src="img/slider/opening%20banner.png" class="img-responsive" />
                         </div>
                         <div class="carousel-caption">
-                            <h2>Per</h2>
+                            <h2>GRAND OPENING</h2>
                         </div>
                     </div>
                     <div class="item">
                         <!-- Set the second background image using inline CSS below. -->
                         <div class="fill">
-                            <img src="img/slider/impp_1007_05_o+garrett+gt3071r_turbo.jpg" class="img-responsive" />
+                            <img src="img/slider/1426879195013.jpg" class="img-responsive" />
                         </div>
                         <div class="carousel-caption">
-                            <h2>Besi</h2>
+                            <h2>KIDS ELECTRICAL CARS</h2>
                         </div>
                     </div>
                     <div class="item">
                         <!-- Set the third background image using inline CSS below. -->
                         <div class="fill">
-                            <img src="img/slider/lamborghini-twin-turbo-engine.jpg" class="img-responsive" />
+                            <img src="img/slider/1427912076754.jpg" class="img-responsive" />
                         </div>
                         <div class="carousel-caption">
-                            <h2>Mbem</h2>
+                            <h2>CAR CONCEPTS &amp; FULL BODY STICKERS</h2>
                         </div>
                     </div>
                 </div>
