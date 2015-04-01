@@ -437,11 +437,11 @@
                         <div class="about-copy">
                              <ul>
                                  <li><a href="#">BLOG</a></li>
-                                 <li><a href="#">FAQ</a></li>
-                                 <li><a href="#">TERMS &amp; CONDITIONS</a></li>
-                                 <li><a href="#">CONTACT US</a></li>
-                                 <li><a href="#">STORE POLICY</a></li>
-                                 <li><a href="#">SHIPPING &amp; DELIVERY</a></li>
+                                 <li><a href="about.php#faq">FAQ</a></li>
+                                 <li><a href="about.php#termcondition">TERMS &amp; CONDITIONS</a></li>
+                                 <li><a href="about.php#contact">CONTACT US</a></li>
+                                 <li><a href="about.php#storepolicy">STORE POLICY</a></li>
+                                 <li><a href="about.php#shippingdelivery">SHIPPING &amp; DELIVERY</a></li>
                             </ul>
                         </div>
                     </div>
@@ -450,7 +450,7 @@
                     <div class="col-xs-12 col-md-12 copyright col-centered">
                         <p>
                             2015 © <a href="index.html">KevGarage</a> by <a href="http://www.zonadolan.com">
-                            <img src="img/button/facebookfooterlogo.png" class="logosuperkecil"></a>
+                            <img src="img/aaaaasd.png" class="logosuperkecil"></a>
                         </p>
                     </div>
                 </div>

@@ -346,11 +346,11 @@
                         <div class="about-copy">
                              <ul>
                                  <li><a href="#">BLOG</a></li>
-                                 <li><a href="#">FAQ</a></li>
-                                 <li><a href="#">TERMS &amp; CONDITIONS</a></li>
-                                 <li><a href="#">CONTACT US</a></li>
-                                 <li><a href="#">STORE POLICY</a></li>
-                                 <li><a href="#">SHIPPING &amp; DELIVERY</a></li>
+                                 <li><a href="about.php#faq">FAQ</a></li>
+                                 <li><a href="about.php#termcondition">TERMS &amp; CONDITIONS</a></li>
+                                 <li><a href="about.php#contact">CONTACT US</a></li>
+                                 <li><a href="about.php#storepolicy">STORE POLICY</a></li>
+                                 <li><a href="about.php#shippingdelivery">SHIPPING &amp; DELIVERY</a></li>
                             </ul>
                         </div>
                     </div>
