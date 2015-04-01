@@ -725,3 +725,20 @@ textarea {
     border: 1px solid #666;
     border-radius: 10px;
 }
+
+.contacts, .terms, .ships {
+    text-align: right;
+    width: 50%;
+    font-size: 150%;
+    
+}
+
+.faqs, .policies {
+    width: 50%;
+    float:right;
+    font-size: 150%;
+}
+
+
+
+
