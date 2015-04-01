@@ -277,7 +277,7 @@
                     <div class="col-xs-12 col-md-12 copyright col-centered">
                         <p>
                             2015 © <a href="index.html">KevGarage</a> by <a href="http://www.zonadolan.com">
-                            <img src="img/button/facebookfooterlogo.png" class="logosuperkecil"></a>
+                             <img src="img/aaaaasd.png" class="logosuperkecil"></a>
                         </p>
                     </div>
                 </div>

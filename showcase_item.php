@@ -201,15 +201,15 @@
 				<?php } else if($_idCategory==2){?>
                 <img src="img/banner/shock%20banner2.jpg" class="img-responsive banner" />
 				<?php } else if($_idCategory==3){?>
-                <img src="img/banner/turbo%20banner2.jpg" class="img-responsive banner" />
+                <img src="img/banner/acc%20banner2.jpg" class="img-responsive banner" />
 				<?php } else if($_idCategory==4){?>
                 <img src="img/banner/rims%20banner2.jpg" class="img-responsive banner" />
 				<?php } else if($_idCategory==5){?>
 				<img src="img/banner/kidscar%20banner2.jpg" class="img-responsive banner" />
 				<?php } else if($_idCategory==6){?>
-				<img src="img/banner/clothes.jpg" class="img-responsive banner" />
+				<img src="img/banner/turbo%20banner2.jpg" class="img-responsive banner" />
 				<?php } else if($_idCategory==7){?>
-				<img src="img/banner/used.jpg" class="img-responsive banner" />
+				<img src="img/banner/used%20banner2.jpg" class="img-responsive banner" />
 				<?php } ?>
             </div>
             <!-- Banner menu -->
@@ -359,7 +359,7 @@
                     <div class="col-xs-12 col-md-12 copyright col-centered">
                         <p>
                             2015 © <a href="index.html">KevGarage</a> by <a href="http://www.zonadolan.com">
-                            <img src="img/button/facebookfooterlogo.png" class="logosuperkecil"></a>
+                             <img src="img/aaaaasd.png" class="logosuperkecil"></a>
                         </p>
                     </div>
                 </div>

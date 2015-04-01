@@ -176,11 +176,19 @@
         <section id="fullbodysticker" class="section-about-even">
             <div class="container">
                 <div class="row">
-                    <div style="padding: 0 10px 10px;">
-                        <h3>Full Body Sticker</h3>
-                        <img src="img/banner/kids-sq-banner.png" style="width:60%; height : auto; margin-left:auto; margin-right:auto; display:block;">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
+                    <div style="padding: 0 10px 10px; margin-top: 20px; text-align:center;">
+                        <p style="font-weight : 900; font-size : 200%; ">Full Body Sticker</p>
+                        <p style="font-size: 150%;">Want to change your car color, but don't want to paint it over? We got a solution for that!</p>
+                        <img src="img/banner/stickerbanner.png" style="width:70%; height : auto; margin-left:auto; margin-right:auto; display:block;">
+                        <p style="margin-top:30px; font-size:125%;">"Change the color of your car to your heart choices."</p>
+                        <p style="margin-top:3px; font-size:125%;">For more information, Contact us <a href="about.php#contact" style="color: #2ee;">here</a>.</p>
+                        <p style="font-weight: 600;">KEV GARAGE</p>
+                        <p style="color: #2cc; font-weight: 900;">Support@kevgarage.com</p>
+<!--
+                        <p style="font-weight: 600;">(021) 123-45678</p>
+-->
+                        <p style="font-weight: 600;">Monday-Saturday, 10.00-18.00 WIB</p>
+                        <p>Perumahan Taman Aries Blok E8 no. 30, Jakarta Barat</p>
                     </div>
                 </div>
             </div>
@@ -190,11 +198,19 @@
         <section id="turboinstalation" class="section-about-odd">
             <div class="container">
                 <div class="row">
-                    <div style="padding: 0 10px 10px;">
-                        <h3>Turbo Instalation</h3>
-                         <img src="img/banner/kids-sq-banner.png" style="width:60%; height : auto; margin-left:auto; margin-right:auto; display:block;">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
+                    <div style="padding: 0 10px 10px; margin-top: 20px; text-align: center;">
+                        <p style="font-weight : 900; font-size : 200%; ">Turbo Instalation</p>
+                        <p style="font-size: 150%;">Want your car be faster than before? Feel the power of your car like never before!</p>
+                         <img src="img/banner/turboinstaltaion.png" style="width:70%; height : auto; margin-left:auto; margin-right:auto; display:block;">
+                        <p style="margin-top:30px; font-size:125%;">"Bringing the power your car needed."</p>
+                        <p style="margin-top:3px; font-size:125%;">For more information, Contact us <a href="about.php#contact" style="color: #2ee;">here</a>.</p>
+                        <p style="font-weight: 600;">KEV GARAGE</p>
+                        <p style="color: #2cc; font-weight: 900;">Support@kevgarage.com</p>
+<!--
+                        <p style="font-weight: 600;">(021) 123-45678</p>
+-->
+                        <p style="font-weight: 600;">Monday-Saturday, 10.00-18.00 WIB</p>
+                        <p>Perumahan Taman Aries Blok E8 no. 30, Jakarta Barat</p>
                     </div>
                 </div>
             </div>
@@ -204,11 +220,19 @@
         <section id="carconsultation" class="section-about-even">
             <div class="container">
                 <div class="row">
-                    <div style="padding: 0 10px 10px;">
-                        <h3>Car Consultation</h3>
-                         <img src="img/banner/kids-sq-banner.png" style="width:60%; height : auto; margin-left:auto; margin-right:auto; display:block;">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
+                    <div style="padding: 0 10px 10px; margin-top: 20px; text-align: center;">
+                        <p style="font-weight : 900; font-size : 200%; ">Car Consultation</p>
+                        <p style="font-size: 150%;">New to the AutoModified world? need some help deciding whats the best?</p>
+                         <img src="img/banner/carconsul.png" style="width:70%; height : auto; margin-left:auto; margin-right:auto; display:block;">
+                        <p style="margin-top:30px; font-size:125%;">"We will help you build your car to it's best features."</p>
+                        <p style="margin-top:3px; font-size:125%;">For more information, Contact us <a href="about.php#contact" style="color: #2ee;">here</a>.</p>
+                        <p style="font-weight: 600;">KEV GARAGE</p>
+                        <p style="color: #2cc; font-weight: 900;">Support@kevgarage.com</p>
+<!--                    
+                        <p style="font-weight: 600;">(021) 123-45678</p>
+-->
+                        <p style="font-weight: 600;">Monday-Saturday, 10.00-18.00 WIB</p>
+                        <p>Perumahan Taman Aries Blok E8 no. 30, Jakarta Barat</p>
                     </div>
                 </div>
             </div>
@@ -267,7 +291,7 @@
                     <div class="col-xs-12 col-md-12 copyright col-centered">
                         <p>
                             2015 © <a href="index.html">KevGarage</a> by <a href="http://www.zonadolan.com">
-                            <img src="img/button/facebookfooterlogo.png" class="logosuperkecil"></a>
+                             <img src="img/aaaaasd.png" class="logosuperkecil"></a>
                         </p>
                     </div>
                 </div>
