@@ -56,7 +56,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-		<!--<div class="wrapper">-->
+			<!--<div class="wrapper">-->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -79,7 +79,7 @@
                    
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Find The Best Item Just for You">SHOP <b class="caret"></b></a>
-                        <ul class="dropdown-menu" style="background-color: #333">
+                        <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333">
                            
                             <li class="dropdownsheader" style="padding-left:20px; color: #fff;">
                                 MOTORSPORT
@@ -122,11 +122,11 @@
                         <a href="showcase_item.php?idCategory=7&nameProduct=" title="One Person Junk is Another Person Treasure">USED</a>
                     </li>
                     <li>
-                        <a href="#" title="Find Latest News and Info about Kevgarage's Event">BLOG</a>
+                        <a href="/blog" title="Find Latest News and Info about Kevgarage's Event">BLOG</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="FAQ and Other Information">ABOUT <b class="caret"></b></a>
-                        <ul class="dropdown-menu" style="background-color: #333;">
+                        <a href="about.php" class="dropdown-toggle" data-toggle="dropdown" title="FAQ and Other Information">ABOUT <b class="caret"></b></a>
+                        <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333;">
 
                             <li class="dropdownsheader">
                                 <a href="about.php#contact" style="color: #fff;">CONTACT</a>
@@ -151,10 +151,9 @@
 						if($productLength==0){
 					?>
 						<a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>                      
-						<?php } else if ($productLength!=0){  ?>
+						<?php } if($productLength!=0){  ?>
 						<a href="cart.php" title="Your Shopping Cart"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true" style="font-size: 20px;"></span><span class="badge"><?php echo $productLength;?></span></a>
-					<?php }
-					?>
+					<?php }?>
                     </li>
                        <li>
                             <form id="search_box" name="search_box" class="navbar-form" role="search" method="GET" action="showcase_item.php">
@@ -223,7 +222,7 @@
         </section>
         
         <!-- Section Terms & Condition -->
-        <section id="termscondition" class="section-about-odd">
+        <section id="termcondition" class="section-about-odd">
             <div class="container">
                 <div class="row">
                     <div class="terms" style="padding: 0 10px 10px;">
@@ -317,7 +316,7 @@
                     <div class="col-md-4 col-xs-4 col-md-offset-4 col-xs-offset-4 col-centered sitemap-copy">
                         <div class="about-copy">
                             <ul>
-                                 <li><a href="#">BLOG</a></li>
+                                 <li><a href="/blog">BLOG</a></li>
                                  <li><a href="about.php#faq">FAQ</a></li>
                                  <li><a href="about.php#termcondition">TERMS &amp; CONDITIONS</a></li>
                                  <li><a href="about.php#contact">CONTACT US</a></li>

@@ -26,7 +26,7 @@
 
 <?php
 	// API TEMPLATE PRODUCT
-	$url = "http://localhost/kevgarage/index.php?r=api/SearchShowcase&nameProduct=";
+	$url = "http://www.kevgarage.com/kevgarage/index.php?r=api/SearchShowcase&nameProduct=";
 	$nameProduct = "";
 	if (isset($_GET["nameProduct"])) $nameProduct = $_GET["nameProduct"];
 	$typeSort = "";
@@ -38,9 +38,9 @@
 	
 	if ($typeSort) {
 		if ($typeSort == "SortCheap")
-			$url = "http://localhost/kevgarage/index.php?r=api/SortPriceCheap&nameProduct=";
+			$url = "http://www.kevgarage.com/kevgarage/index.php?r=api/SortPriceCheap&nameProduct=";
 		else if ($typeSort == "SortExpensive")
-			$url = "http://localhost/kevgarage/index.php?r=api/SortPriceExpensive&nameProduct=";
+			$url = "http://www.kevgarage.com/kevgarage/index.php?r=api/SortPriceExpensive&nameProduct=";
 	}
 ?>
 
@@ -137,10 +137,10 @@
                         <a href="showcase_item.php?idCategory=7&nameProduct=" title="One Person Junk is Another Person Treasure">USED</a>
                     </li>
                     <li>
-                        <a href="#" title="Find Latest News and Info about Kevgarage's Event">BLOG</a>
+                        <a href="/blog" title="Find Latest News and Info about Kevgarage's Event">BLOG</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="FAQ and Other Information">ABOUT <b class="caret"></b></a>
+                        <a href="about.php" class="dropdown-toggle" data-toggle="dropdown" title="FAQ and Other Information">ABOUT <b class="caret"></b></a>
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333;">
 
                             <li class="dropdownsheader">
@@ -259,7 +259,7 @@
 							<a href="product_detail.php?idProduct=<?php echo $json->idProduct?>">
 								<div class="col-md-2 item">
 									<div class="thumbnail">
-										<img src="<?php echo 'http://localhost/kevgarage/images/products/'.$imageName1;?>" />
+										<img src="<?php echo 'http://www.kevgarage.com/kevgarage/images/products/'.$imageName1;?>" />
 									</div>
 									
 									<div class="detail">
@@ -288,7 +288,7 @@
                       </a>
                     </li>
 					<?php
-						$json_get = json_decode(file_get_contents('http://localhost/kevgarage/index.php?r=api/Search&nameProduct='.$_GET["nameProduct"]));
+						$json_get = json_decode(file_get_contents('http://www.kevgarage.com/kevgarage/index.php?r=api/Search&nameProduct='.$_GET["nameProduct"]));
 						$paging = count($json_get) / 20 + 1;
 						for($i=1;$i<=$paging;$i++) {
 					?>
@@ -309,8 +309,7 @@
         <!--</div>-->
         
         
-<!--footer
-        <footer>-->
+        <!-- footer -->
         
         <div class="footer">
             <div class="container">
@@ -344,8 +343,8 @@
                     </div>
                     <div class="col-md-4 col-xs-4 col-md-offset-4 col-xs-offset-4 col-centered sitemap-copy">
                         <div class="about-copy">
-                             <ul>
-                                 <li><a href="#">BLOG</a></li>
+                            <ul>
+                                 <li><a href="/blog">BLOG</a></li>
                                  <li><a href="about.php#faq">FAQ</a></li>
                                  <li><a href="about.php#termcondition">TERMS &amp; CONDITIONS</a></li>
                                  <li><a href="about.php#contact">CONTACT US</a></li>
@@ -366,8 +365,7 @@
             </div>
         </div>
 
-        <!--</footer>-->        <!--</footer>-->
-
+        <!-- footer -->
         
         
         <!-- Full page search -->

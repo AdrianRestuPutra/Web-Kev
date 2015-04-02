@@ -26,7 +26,7 @@
 
 <?php
 	// API TEMPLATE PRODUCT
-	$url = "http://localhost/kevgarage/index.php?r=api/SortNewest";
+	$url = "http://www.kevgarage.com/kevgarage/index.php?r=api/SortNewest";
 	
 	$idProduct = 0;
 	$nameProduct = "";
@@ -143,10 +143,10 @@
                         <a href="showcase_item.php?idCategory=7&nameProduct=" title="One Person Junk is Another Person Treasure">USED</a>
                     </li>
                     <li>
-                        <a href="#" title="Find Latest News and Info about Kevgarage's Event">BLOG</a>
+                        <a href="/blog" title="Find Latest News and Info about Kevgarage's Event">BLOG</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="FAQ and Other Information">ABOUT <b class="caret"></b></a>
+                        <a href="about.php" class="dropdown-toggle" data-toggle="dropdown" title="FAQ and Other Information">ABOUT <b class="caret"></b></a>
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333;">
 
                             <li class="dropdownsheader">
@@ -254,7 +254,7 @@
                 <section class="home-three-banner">
                   <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
                     <div class="col-xs-4 wow fadeInUp animated" style="visibility: visible" data-wow-delay="100ms">
-                        <a href="http://localhost/web-kev/showcase_item.php?idCategory=1&nameProduct=" title="">
+                        <a href="http://www.kevgarage.com/web-kev/showcase_item.php?idCategory=1&nameProduct=" title="">
                             <img id="product-item" src="img/banner/engine-sq-banner.png" class="img-responsive" alt="" />
                             <!-- Caption -->
                             <h4>
@@ -266,7 +266,7 @@
                         </a>
                     </div>
                     <div class="col-xs-4 wow fadeInUp animated" data-wow-delay="300ms">
-                        <a href="http://localhost/web-kev/showcase_item.php?idCategory=2&nameProduct=" title="">
+                        <a href="http://www.kevgarage.com/web-kev/showcase_item.php?idCategory=2&nameProduct=" title="">
                             <img id="product-item" src="img/banner/handling-sq-banner.png" class="img-responsive" alt="" />
                             <!-- Caption -->
                             <h4>
@@ -278,7 +278,7 @@
                         </a>
                     </div>
                     <div class="col-xs-4 wow fadeInUp animated" data-wow-delay="500ms">
-                        <a href="http://localhost/web-kev/showcase_item.php?idCategory=5&nameProduct=" title="">
+                        <a href="http://www.kevgarage.com/web-kev/showcase_item.php?idCategory=5&nameProduct=" title="">
                             <img id="product-item" src="img/banner/kids-sq-banner.png" class="img-responsive" alt="" />
                             <!-- Caption -->
                             <h4>
@@ -299,7 +299,7 @@
                 <div class="showcase-part"><h2>Featured Products</h2></div>
                 <div class="container">
                     <div class="row row-centered product-showcase" style="margin-right: auto; margin-left: auto; ">
-						<?php $fitur = "http://localhost/kevgarage/index.php?r=api/FeatureProduct";
+						<?php $fitur = "http://www.kevgarage.com/kevgarage/index.php?r=api/FeatureProduct";
 	
 							$idFiture=1;
 							$featureArray = array();	
@@ -311,13 +311,13 @@
 							$featureArray[4] = $json_get_feature->idProduct5;
 							
 							for($i=0;$i<5;$i++) {
-								$json_get_feature_object = json_decode(file_get_contents("http://localhost/kevgarage/index.php?r=api/ProductDetail&idProduct=".$featureArray[$i]));
+								$json_get_feature_object = json_decode(file_get_contents("http://www.kevgarage.com/kevgarage/index.php?r=api/ProductDetail&idProduct=".$featureArray[$i]));
 								//echo json_encode($json_get_feature_object);
 						?>
 							<a href="product_detail.php?idProduct=<?php echo $json_get_feature_object->idProduct?>">
 								<div class="col-md-2 item">
 									<div class="thumbnail">
-										<img src="<?php echo 'http://localhost/kevgarage/images/products/'.$json_get_feature_object->imageName1;?>" />
+										<img src="<?php echo 'http://www.kevgarage.com/kevgarage/images/products/'.$json_get_feature_object->imageName1;?>" />
 									</div>
 									
 									<div class="detail">
@@ -360,7 +360,7 @@
 							<a href="product_detail.php?idProduct=<?php echo $json->idProduct?>">
 								<div class="col-md-2 item">
 									<div class="thumbnail">
-										<img src="<?php echo 'http://localhost/kevgarage/images/products/'.$imageName1;?>" />
+										<img src="<?php echo 'http://www.kevgarage.com/kevgarage/images/products/'.$imageName1;?>" />
 									</div>
 									
 									<div class="detail">
@@ -400,8 +400,7 @@
         <!--</div>-->
         
         
-        <!--footer
-        <footer>-->
+        <!-- footer -->
         
         <div class="footer">
             <div class="container">
@@ -435,8 +434,8 @@
                     </div>
                     <div class="col-md-4 col-xs-4 col-md-offset-4 col-xs-offset-4 col-centered sitemap-copy">
                         <div class="about-copy">
-                             <ul>
-                                 <li><a href="#">BLOG</a></li>
+                            <ul>
+                                 <li><a href="/blog">BLOG</a></li>
                                  <li><a href="about.php#faq">FAQ</a></li>
                                  <li><a href="about.php#termcondition">TERMS &amp; CONDITIONS</a></li>
                                  <li><a href="about.php#contact">CONTACT US</a></li>
@@ -450,14 +449,14 @@
                     <div class="col-xs-12 col-md-12 copyright col-centered">
                         <p>
                             2015 © <a href="index.html">KevGarage</a> by <a href="http://www.zonadolan.com">
-                            <img src="img/aaaaasd.png" class="logosuperkecil"></a>
+                             <img src="img/aaaaasd.png" class="logosuperkecil"></a>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!--</footer>-->        <!--</footer>-->
+        <!-- footer -->
 
         
         <!-- Full page search -->

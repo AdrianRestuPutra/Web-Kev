@@ -26,7 +26,7 @@
 
 <?php
 	// API TEMPLATE PRODUCT
-	$url = "http://localhost/kevgarage/index.php?r=api/ProductDetail&idProduct=";
+	$url = "http://www.kevgarage.com/kevgarage/index.php?r=api/ProductDetail&idProduct=";
 	
 	$idProduct = 0;
 	$nameProduct = "";
@@ -106,7 +106,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-					<!--<div class="wrapper">-->
+			<!--<div class="wrapper">-->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -172,10 +172,10 @@
                         <a href="showcase_item.php?idCategory=7&nameProduct=" title="One Person Junk is Another Person Treasure">USED</a>
                     </li>
                     <li>
-                        <a href="#" title="Find Latest News and Info about Kevgarage's Event">BLOG</a>
+                        <a href="/blog" title="Find Latest News and Info about Kevgarage's Event">BLOG</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="FAQ and Other Information">ABOUT <b class="caret"></b></a>
+                        <a href="about.php" class="dropdown-toggle" data-toggle="dropdown" title="FAQ and Other Information">ABOUT <b class="caret"></b></a>
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333;">
 
                             <li class="dropdownsheader">
@@ -229,19 +229,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5">
-                        <img id="product_image" width="411px" height="274px" src="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName1.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName1.'&w=1280&h=854';?>"/> 
+                        <img id="product_image" width="411px" height="274px" src="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName1.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName1.'&w=1280&h=854';?>"/> 
                         <div id="product_gallery" > 
-                            <a href="#" width="411px" height="274px" data-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName1.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName1.'&w=1280&h=854';?>"> 
-                                <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName1.'&w=100&h=67';?>" /> 
+                            <a href="#" width="411px" height="274px" data-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName1.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName1.'&w=1280&h=854';?>"> 
+                                <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName1.'&w=100&h=67';?>" /> 
                             </a> 
-                            <a href="#" data-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName2.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName2.'&w=1280&h=854';?>"> 
-                                <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName2.'&w=100&h=67';?>" /> 
+                            <a href="#" data-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName2.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName2.'&w=1280&h=854';?>"> 
+                                <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName2.'&w=100&h=67';?>" /> 
                             </a> 
-                            <a href="#" data-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName3.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName3.'&w=1280&h=854';?>"> 
-                                <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName3.'&w=100&h=67';?>" /> 
+                            <a href="#" data-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName3.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName3.'&w=1280&h=854';?>"> 
+                                <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName3.'&w=100&h=67';?>" /> 
                             </a>
-                            <a href="#" data-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName4.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName4.'&w=1280&h=854';?>"> 
-                                <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?src=http://localhost/kevgarage/images/products/'.$imageName4.'&w=100&h=67';?>" /> 
+                            <a href="#" data-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName4.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName4.'&w=1280&h=854';?>"> 
+                                <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName4.'&w=100&h=67';?>" /> 
                             </a>
                         </div>
                     </div>
@@ -297,7 +297,7 @@
                 <div class="row" style="margin-top: 20px;">
                     <h3>Related Product</h3>
                     <div id="related-product" class="owl-carousel owl-theme">
-						<?php $related = "http://localhost/kevgarage/index.php?r=api/RelatedProduct&idCategory=";
+						<?php $related = "http://www.kevgarage.com/kevgarage/index.php?r=api/RelatedProduct&idCategory=";
 							
 							$idProduct = 0;
 							$nameProduct = "";
@@ -311,7 +311,7 @@
 						<a href="product_detail.php?idProduct=<?php echo $json_get_related[$i]->idProduct?>">
 							<div class="item">
 								<div class="smaller-thumbnail">
-									<img src="<?php echo 'http://localhost/kevgarage/images/products/'.$json_get_related[$i]->imageName1;?>" />
+									<img src="<?php echo 'http://www.kevgarage.com/kevgarage/images/products/'.$json_get_related[$i]->imageName1;?>" />
 								</div>
 								<div class="details">
 									<?php echo $json_get_related[$i]->nameProduct ?>
@@ -332,8 +332,7 @@
         <!--</div>-->
         
         
-<!--footer
-        <footer>-->
+        <!-- footer -->
         
         <div class="footer">
             <div class="container">
@@ -368,7 +367,7 @@
                     <div class="col-md-4 col-xs-4 col-md-offset-4 col-xs-offset-4 col-centered sitemap-copy">
                         <div class="about-copy">
                             <ul>
-                                 <li><a href="#">BLOG</a></li>
+                                 <li><a href="/blog">BLOG</a></li>
                                  <li><a href="about.php#faq">FAQ</a></li>
                                  <li><a href="about.php#termcondition">TERMS &amp; CONDITIONS</a></li>
                                  <li><a href="about.php#contact">CONTACT US</a></li>
@@ -389,8 +388,7 @@
             </div>
         </div>
 
-        <!--</footer>-->        <!--</footer>-->
-
+        <!-- footer -->
         
         
         <!-- Full page search -->

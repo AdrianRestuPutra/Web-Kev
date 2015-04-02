@@ -60,7 +60,7 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-		<!--<div class="wrapper">-->
+					<!--<div class="wrapper">-->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -126,10 +126,10 @@
                         <a href="showcase_item.php?idCategory=7&nameProduct=" title="One Person Junk is Another Person Treasure">USED</a>
                     </li>
                     <li>
-                        <a href="#" title="Find Latest News and Info about Kevgarage's Event">BLOG</a>
+                        <a href="/blog" title="Find Latest News and Info about Kevgarage's Event">BLOG</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="FAQ and Other Information">ABOUT <b class="caret"></b></a>
+                        <a href="about.php" class="dropdown-toggle" data-toggle="dropdown" title="FAQ and Other Information">ABOUT <b class="caret"></b></a>
                         <ul class="dropdown-menu wow fadeIn animated" data-wow-duration="0.5s" style="background-color: #333;">
 
                             <li class="dropdownsheader">
@@ -187,12 +187,12 @@
 							<?php
 								$totalHarga = 0;
 								for($i=0;$i<count($json_cart["product"]);$i++) {
-									$url = "http://localhost/kevgarage/index.php?r=api/ProductDetail&idProduct=".$json_cart["product"][$i]["idProduct"];
+									$url = "http://www.kevgarage.com/kevgarage/index.php?r=api/ProductDetail&idProduct=".$json_cart["product"][$i]["idProduct"];
 									$json_get = json_decode(file_get_contents($url));
 									?>
 									<div class="row">
 										<div class="col-md-1" style="margin-top:15px; margin-left:20px;">
-											<img class="thumbnail" height="25px" width="25px" src="<?php echo 'http://localhost/kevgarage/images/products/'.$json_get->imageName1;?>">
+											<img class="thumbnail" height="25px" width="25px" src="<?php echo 'http://www.kevgarage.com/kevgarage/images/products/'.$json_get->imageName1;?>">
 										</div>
 										<div class="col-md-10 panel panel-default" style="margin:15px 0px 0px 15px; height:25px; color:#fff; padding: 5px 10px;">
 											<div class="col-md-8">
@@ -227,8 +227,7 @@
         <div class="push"></div>
   
         
-<!--footer
-        <footer>-->
+        <!-- footer -->
         
         <div class="footer">
             <div class="container">
@@ -263,7 +262,7 @@
                     <div class="col-md-4 col-xs-4 col-md-offset-4 col-xs-offset-4 col-centered sitemap-copy">
                         <div class="about-copy">
                             <ul>
-                                 <li><a href="#">BLOG</a></li>
+                                 <li><a href="/blog">BLOG</a></li>
                                  <li><a href="about.php#faq">FAQ</a></li>
                                  <li><a href="about.php#termcondition">TERMS &amp; CONDITIONS</a></li>
                                  <li><a href="about.php#contact">CONTACT US</a></li>
@@ -284,7 +283,7 @@
             </div>
         </div>
 
-        <!--</footer>-->        <!--</footer>-->
+        <!-- footer -->
 
         
         
