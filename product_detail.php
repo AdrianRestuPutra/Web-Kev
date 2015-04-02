@@ -229,10 +229,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5">
-                        <img id="product_image" width="411px" height="274px" src="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName1.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName1.'&w=1280&h=854';?>"/> 
+                        <img id="product_image" width="411px" height="274px" src="<?php echo 'showImage.php?w=411&h=274&src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName1;?>" data-zoom-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName1.'&w=1280&h=854';?>"/> 
                         <div id="product_gallery" > 
                             <a href="#" width="411px" height="274px" data-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName1.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName1.'&w=1280&h=854';?>"> 
-                                <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName1.'&w=100&h=67';?>" /> 
+                                <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?w=100&h=67&src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName1;?>" /> 
                             </a> 
                             <a href="#" data-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName2.'&w=411&h=274';?>" data-zoom-image="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName2.'&w=1280&h=854';?>"> 
                                 <img id="product_image" width="100px" height="67px" src="<?php echo 'showImage.php?src=http://www.kevgarage.com/kevgarage/images/products/'.$imageName2.'&w=100&h=67';?>" /> 
